@@ -1,0 +1,74 @@
+{
+  "name": "Location",
+  "file": "location",
+  "types": [
+    "schema:Place",
+    "erdif:Location"
+  ],
+  "description": {
+    "cs": "Poloha nemovitosti kombinující tři nezávislé způsoby identifikace.",
+    "en": "Location of the property combining three independent means of identification."
+  },
+  "properties": [
+    {
+      "term": "globalIdentifier",
+      "iri": "erdif:globalIdentifier",
+      "range": "erdif:InspireIdentifier",
+      "required": false,
+      "description": {
+        "cs": "Nadnárodní prostorový identifikátor INSPIRE.",
+        "en": "Supranational INSPIRE spatial identifier."
+      }
+    },
+    {
+      "term": "geo",
+      "iri": "schema:geo",
+      "range": "schema:GeoCoordinates",
+      "required": true,
+      "description": {
+        "cs": "Souřadnice WGS 84. Povinný záložní údaj.",
+        "en": "WGS 84 coordinates. Mandatory fallback."
+      }
+    },
+    {
+      "term": "approximateCoordinates",
+      "iri": "erdif:approximateCoordinates",
+      "range": "xsd:boolean",
+      "required": true,
+      "description": {
+        "cs": "Příznak, zda jsou souřadnice přibližné.",
+        "en": "Flag indicating whether coordinates are approximate."
+      }
+    },
+    {
+      "term": "localIdentifiers",
+      "iri": "erdif:localIdentifier",
+      "range": "erdif:LocalIdentifier",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Identifikátory národních registrů (např. RÚIAN).",
+        "en": "National registry identifiers (e.g. RUIAN)."
+      }
+    },
+    {
+      "term": "address",
+      "iri": "schema:address",
+      "range": "schema:PostalAddress",
+      "required": false,
+      "description": {
+        "cs": "Poštovní adresa v lokálním formátu.",
+        "en": "Postal address in local format."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "explicit-coordinate-precision",
+      "description": {
+        "cs": "`approximateCoordinates` musí být uveden vždy explicitně, aby chybějící hodnota nebyla vykládána jako tvrzení o přesné poloze.",
+        "en": "`approximateCoordinates` must always be stated explicitly, so that a missing value is never interpreted as a claim of exact position."
+      }
+    }
+  ]
+}

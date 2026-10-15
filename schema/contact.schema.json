@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/contact.schema.json",
+  "title": "Contact",
+  "description": "Contact entity of the offer. Kept separate from property data so personal data can be removed or anonymised independently.",
+  "type": "object",
+  "required": [
+    "@type",
+    "contactType",
+    "name"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Contact`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Contact"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Contact"
+          }
+        }
+      ]
+    },
+    "contactType": {
+      "description": "Type of advertiser (agent, office, owner).",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Agent",
+        "Office",
+        "Owner"
+      ]
+    },
+    "name": {
+      "description": "Name of the entity.",
+      "$ref": "common.schema.json#/$defs/languageMap"
+    },
+    "email": {
+      "description": "Contact e-mail.",
+      "type": "string",
+      "minLength": 1,
+      "format": "email"
+    },
+    "telephone": {
+      "description": "Contact phone in international format.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\+[1-9][0-9]{6,14}$"
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "contact-reachable",
+      "anyOf": [
+        {
+          "required": [
+            "email"
+          ]
+        },
+        {
+          "required": [
+            "telephone"
+          ]
+        }
+      ]
+    }
+  ]
+}

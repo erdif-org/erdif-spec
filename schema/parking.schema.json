@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/parking.schema.json",
+  "title": "Parking",
+  "description": "A parking option belonging to the property. Not modelled as a room, because parking does not count towards the layout or usable area of the unit.",
+  "type": "object",
+  "required": [
+    "@type",
+    "parkingType"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Parking`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Parking"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Parking"
+          }
+        }
+      ]
+    },
+    "parkingType": {
+      "description": "Type of parking.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "OutdoorSpace",
+        "CoveredSpace",
+        "GarageSpace",
+        "PrivateGarage"
+      ]
+    },
+    "count": {
+      "description": "Number of spaces of this type. Defaults to 1.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "includedInPrice": {
+      "description": "Flag indicating whether parking is included in the main price.",
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+site_name: ERDIF Specification
+site_description: European Real Estate Data Interchange Format
+site_url: https://erdif-org.github.io/erdif-spec/
+repo_url: https://github.com/erdif-org/erdif-spec
+edit_uri: edit/main/docs/
+
+# Partials are only embedded into model pages, never published on their own
+exclude_docs: |
+  _partials/
+
+# Generates docs/codelists/, docs/_partials/, docs/vocabulary.md
+# and docs/ns/v1/erdif.ttl
+hooks:
+  - scripts/mkdocs_hooks.py
+
+# Make `mkdocs serve` rebuild when the JSON sources change
+watch:
+  - codelists
+  - schema
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+extra:
+  version:
+    provider: mike
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  # Embeds generated tables (docs/_partials) and files from the repo root
+  - pymdownx.snippets:
+      base_path: ["docs", "."]
+      check_paths: true
+
+nav:
+  - Introduction: index.md
+  - Namespaces: namespaces.md
+  - Data model:
+      - Advert: model/advert.md
+      - Price: model/price.md
+      - Contact: model/contact.md
+      - Realty: model/realty.md
+      - Building: model/building.md
+      - Location: model/location.md
+      - InspireIdentifier: model/inspire-identifier.md
+      - LocalIdentifier: model/local-identifier.md
+      - LocalArea: model/local-area.md
+      - Room: model/room.md
+      - Equipment: model/equipment.md
+      - UtilityNetwork: model/utility-network.md
+      - Parking: model/parking.md
+      - Media: model/media.md
+      - ExportInformation: model/export-information.md
+  - erdif vocabulary: vocabulary.md
+  - Codelists:
+      - Overview: codelists.md
+      - TransactionType: codelists/transaction-type.md
+      - RealtyType: codelists/realty-type.md
+      - OwnershipType: codelists/ownership-type.md
+      - RoomType: codelists/room-type.md
+      - UtilityNetwork: codelists/utility-network.md
+      - UtilityConnection: codelists/utility-connection.md
+      - EnergyClass: codelists/energy-class.md
+      - PriceType: codelists/price-type.md
+      - ContactType: codelists/contact-type.md
+      - MediaType: codelists/media-type.md
+      - EquipmentType: codelists/equipment-type.md
+      - AmenityType: codelists/amenity-type.md
+      - RealtyCondition: codelists/realty-condition.md
+      - ConstructionType: codelists/construction-type.md
+      - ParkingType: codelists/parking-type.md
+      - AccessibilityFeature: codelists/accessibility-feature.md
+  - Localization: localization.md
+  - Geolocation: geolocation.md
+  - Versioning: versioning.md
+  - Conformance: conformance.md
+  - Examples: examples.md
+  - Changelog: changelog.md

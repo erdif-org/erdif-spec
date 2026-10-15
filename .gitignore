@@ -1,0 +1,16 @@
+# Generated documentation — rebuilt from codelists/*.json and schema/terms/*.json
+# by scripts/build_*.py (run automatically by the MkDocs hook). Never edit by hand.
+# docs/ns/v1/erdif.ttl is generated too, but committed as a published artifact.
+docs/codelists/
+docs/_partials/
+docs/vocabulary.md
+
+# MkDocs build output
+site/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea

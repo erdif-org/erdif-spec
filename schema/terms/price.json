@@ -1,0 +1,146 @@
+{
+  "name": "Price",
+  "file": "price",
+  "types": [
+    "schema:PriceSpecification",
+    "erdif:Price"
+  ],
+  "description": {
+    "cs": "Jedna cenová položka nabídky. Nabídka jich může nést více různých typů.",
+    "en": "A single price item of the offer. An offer may carry several of different types."
+  },
+  "properties": [
+    {
+      "term": "priceType",
+      "iri": "erdif:priceType",
+      "range": "erdif-cl:PriceType",
+      "required": true,
+      "codelist": "PriceType",
+      "description": {
+        "cs": "Typ cenové položky.",
+        "en": "Type of the price item."
+      }
+    },
+    {
+      "term": "price",
+      "iri": "schema:price",
+      "range": "xsd:decimal",
+      "required": false,
+      "description": {
+        "cs": "Číselná hodnota ceny. Smí chybět jen tehdy, když je `priceOnRequest` true.",
+        "en": "Numeric value of the price. May be omitted only when `priceOnRequest` is true."
+      },
+      "jsonSchema": {
+        "minimum": 0
+      }
+    },
+    {
+      "term": "priceOnRequest",
+      "iri": "erdif:priceOnRequest",
+      "range": "xsd:boolean",
+      "required": false,
+      "description": {
+        "cs": "Příznak, že cena je k dispozici pouze na dotaz.",
+        "en": "Flag indicating that the price is available on request only."
+      }
+    },
+    {
+      "term": "priceCurrency",
+      "iri": "schema:priceCurrency",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Měna podle ISO 4217.",
+        "en": "Currency per ISO 4217."
+      },
+      "jsonSchema": {
+        "pattern": "^[A-Z]{3}$"
+      }
+    },
+    {
+      "term": "unitCode",
+      "iri": "schema:unitCode",
+      "range": "xsd:string",
+      "required": false,
+      "description": {
+        "cs": "Měrná jednotka podle UN/CEFACT (např. MON za měsíc, MTK za m²).",
+        "en": "Unit of measure per UN/CEFACT (e.g. MON per month, MTK per sqm)."
+      },
+      "jsonSchema": {
+        "pattern": "^[A-Z0-9]{2,3}$"
+      }
+    },
+    {
+      "term": "negotiable",
+      "iri": "erdif:negotiable",
+      "range": "xsd:boolean",
+      "required": false,
+      "description": {
+        "cs": "Příznak, zda je cena k jednání.",
+        "en": "Flag indicating whether the price is negotiable."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "price-or-on-request",
+      "description": {
+        "cs": "Každá cenová položka musí obsahovat buď `price`, nebo `priceOnRequest` s hodnotou `true`.",
+        "en": "Each price item must contain either `price`, or `priceOnRequest` set to `true`."
+      },
+      "jsonSchema": {
+        "anyOf": [
+          {
+            "required": [
+              "price"
+            ]
+          },
+          {
+            "required": [
+              "priceOnRequest"
+            ],
+            "properties": {
+              "priceOnRequest": {
+                "const": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "periodic-price-unit",
+      "description": {
+        "cs": "Je-li `priceType` `Rent` nebo `ServiceCharges`, je `unitCode` povinný (např. `MON` za měsíc, `ANN` za rok).",
+        "en": "When `priceType` is `Rent` or `ServiceCharges`, `unitCode` is required (e.g. `MON` per month, `ANN` per year)."
+      },
+      "jsonSchema": {
+        "if": {
+          "required": [
+            "priceType"
+          ],
+          "properties": {
+            "priceType": {
+              "enum": [
+                "Rent",
+                "ServiceCharges"
+              ]
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "unitCode"
+          ]
+        }
+      }
+    },
+    {
+      "id": "parking-price",
+      "description": {
+        "cs": "Má-li některá možnost parkování `includedInPrice` s hodnotou `false`, má nabídka obsahovat cenovou položku s `priceType` `Parking`.",
+        "en": "A price item with `priceType` `Parking` should be present when any parking option of the realty has `includedInPrice` set to `false`."
+      }
+    }
+  ]
+}

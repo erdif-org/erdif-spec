@@ -1,0 +1,130 @@
+{
+  "name": "Advert",
+  "file": "advert",
+  "types": [
+    "schema:RealEstateListing",
+    "erdif:Advert"
+  ],
+  "description": {
+    "cs": "Kořenová entita formátu. Reprezentuje jednu nabídku nemovitosti.",
+    "en": "Root entity of the format. Represents a single real estate offer."
+  },
+  "properties": [
+    {
+      "term": "formatVersion",
+      "iri": "erdif:formatVersion",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Verze formátu ERDIF, podle které byl dokument vytvořen.",
+        "en": "Version of the ERDIF format the document was created against."
+      },
+      "jsonSchema": {
+        "pattern": "^1\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$"
+      }
+    },
+    {
+      "term": "identifier",
+      "iri": "schema:identifier",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Identifikátor inzerátu v rámci vydávajícího systému.",
+        "en": "Identifier of the advert within the issuing system."
+      }
+    },
+    {
+      "term": "datePosted",
+      "iri": "schema:datePosted",
+      "range": "xsd:dateTime",
+      "required": true,
+      "description": {
+        "cs": "Okamžik zveřejnění nabídky.",
+        "en": "Moment the offer was published."
+      }
+    },
+    {
+      "term": "transactionType",
+      "iri": "erdif:transactionType",
+      "range": "erdif-cl:TransactionType",
+      "required": true,
+      "codelist": "TransactionType",
+      "description": {
+        "cs": "Typ transakce, které se nabídka týká.",
+        "en": "Type of transaction the offer concerns."
+      }
+    },
+    {
+      "term": "description",
+      "iri": "schema:description",
+      "range": "rdf:langString",
+      "required": true,
+      "languageMap": true,
+      "description": {
+        "cs": "Marketingový text nabídky v jazykových mutacích. Alespoň jeden jazyk je povinný.",
+        "en": "Marketing text of the offer in language variants. At least one language is required."
+      }
+    },
+    {
+      "term": "contact",
+      "iri": "erdif:contact",
+      "range": "erdif:Contact",
+      "required": true,
+      "description": {
+        "cs": "Kontaktní subjekt spravující nabídku.",
+        "en": "Contact entity managing the offer."
+      }
+    },
+    {
+      "term": "realty",
+      "iri": "erdif:realty",
+      "range": "erdif:Realty",
+      "required": true,
+      "description": {
+        "cs": "Fyzická nemovitost, které se nabídka týká.",
+        "en": "Physical property the offer concerns."
+      }
+    },
+    {
+      "term": "prices",
+      "iri": "erdif:price",
+      "range": "erdif:Price",
+      "required": true,
+      "cardinality": "1..*",
+      "description": {
+        "cs": "Cenové položky nabídky.",
+        "en": "Price items of the offer."
+      }
+    },
+    {
+      "term": "media",
+      "iri": "erdif:media",
+      "range": "erdif:Media",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Fotografie, videa, půdorysy a virtuální prohlídky.",
+        "en": "Photos, videos, floor plans and virtual tours."
+      }
+    },
+    {
+      "term": "exportInformation",
+      "iri": "erdif:exportInformation",
+      "range": "erdif:ExportInformation",
+      "required": true,
+      "description": {
+        "cs": "Auditní stopa exportu.",
+        "en": "Export audit trail."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "advert-id-vs-source-id",
+      "description": {
+        "cs": "`identifier` identifikuje inzerát v systému, který dokument vydal; `exportInformation.sourceAdvertId` v systému, kde inzerát vznikl. Je-li vydavatel zároveň zdrojovým systémem, jsou obě hodnoty shodné.",
+        "en": "`identifier` identifies the advert in the system that issued this document; `exportInformation.sourceAdvertId` identifies it in the system where it originated. When the issuer is the originating system, both values are the same."
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "_comment": "INVALID: Location has no `geo`. WGS 84 coordinates are the mandatory fallback, because an INSPIRE identifier may not exist. See docs/geolocation.md.",
+  "_expect": {
+    "path": "/realty/location",
+    "keyword": "required"
+  },
+  "@context": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld",
+  "@type": [
+    "RealEstateListing",
+    "erdif:Advert"
+  ],
+  "formatVersion": "1.0.0-beta.1",
+  "identifier": "ADV-2026-000101",
+  "datePosted": "2026-09-01T09:00:00Z",
+  "transactionType": "Sale",
+  "description": {
+    "en": "Two-room apartment close to the city centre."
+  },
+  "prices": [
+    {
+      "@type": [
+        "PriceSpecification",
+        "erdif:Price"
+      ],
+      "priceType": "Purchase",
+      "price": 5200000,
+      "priceCurrency": "CZK"
+    }
+  ],
+  "contact": {
+    "@type": [
+      "RealEstateAgent",
+      "erdif:Contact"
+    ],
+    "contactType": "Agent",
+    "name": {
+      "cs": "Jan Novák",
+      "en": "Jan Novák"
+    },
+    "email": "jan.novak@example.com",
+    "telephone": "+420123456789"
+  },
+  "realty": {
+    "@type": [
+      "Apartment",
+      "erdif:Realty"
+    ],
+    "realtyType": "Apartment",
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 45.0,
+      "unitCode": "MTK"
+    },
+    "location": {
+      "@type": [
+        "Place",
+        "erdif:Location"
+      ],
+      "approximateCoordinates": false
+    }
+  },
+  "exportInformation": {
+    "@type": "erdif:ExportInformation",
+    "sourceSystem": "RealiSoft",
+    "sourceAdvertId": "EXT-101",
+    "exportedAt": "2026-09-01T09:00:00Z"
+  }
+}

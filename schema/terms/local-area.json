@@ -1,0 +1,62 @@
+{
+  "name": "LocalArea",
+  "file": "local-area",
+  "types": [
+    "schema:Place",
+    "erdif:LocalArea"
+  ],
+  "description": {
+    "cs": "Prvek občanské vybavenosti v okolí nemovitosti. Oddělen od `Location`, protože jde o popisnou informaci, ne o prostorovou identifikaci.",
+    "en": "An amenity in the surroundings of the property. Kept separate from `Location`, because it is descriptive information, not spatial identification."
+  },
+  "properties": [
+    {
+      "term": "amenityType",
+      "iri": "erdif:amenityType",
+      "range": "erdif-cl:AmenityType",
+      "required": true,
+      "codelist": "AmenityType",
+      "description": {
+        "cs": "Druh vybavenosti.",
+        "en": "Type of amenity."
+      }
+    },
+    {
+      "term": "name",
+      "iri": "schema:name",
+      "range": "rdf:langString",
+      "required": false,
+      "languageMap": true,
+      "description": {
+        "cs": "Název místa.",
+        "en": "Name of the amenity."
+      }
+    },
+    {
+      "term": "distance",
+      "iri": "erdif:distance",
+      "range": "schema:QuantitativeValue",
+      "required": false,
+      "description": {
+        "cs": "Vzdálenost od nemovitosti v metrech (`MTR`).",
+        "en": "Distance from the property in metres (`MTR`)."
+      },
+      "jsonSchema": {
+        "properties": {
+          "unitCode": {
+            "const": "MTR"
+          }
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "amenity-schema-type",
+      "description": {
+        "cs": "Producent smí vedle `Place` uvést konkrétnější typ schema.org (např. `SubwayStation`, `Preschool`, `Park`).",
+        "en": "Producers may add a more specific schema.org type (e.g. `SubwayStation`, `Preschool`, `Park`) next to `Place`."
+      }
+    }
+  ]
+}

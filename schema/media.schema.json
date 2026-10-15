@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/media.schema.json",
+  "title": "Media",
+  "description": "A multimedia item of the offer, including display order.",
+  "type": "object",
+  "required": [
+    "@type",
+    "mediaType",
+    "contentUrl"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Media`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Media"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Media"
+          }
+        }
+      ]
+    },
+    "mediaType": {
+      "description": "Type of media.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "OutsidePhoto",
+        "InsidePhoto",
+        "Video",
+        "FloorPlan",
+        "VirtualTour"
+      ]
+    },
+    "contentUrl": {
+      "description": "URL of the media item.",
+      "type": "string",
+      "format": "uri"
+    },
+    "position": {
+      "description": "Display order.",
+      "type": "integer"
+    },
+    "caption": {
+      "description": "Caption of the media item in language variants.",
+      "$ref": "common.schema.json#/$defs/languageMap"
+    }
+  }
+}

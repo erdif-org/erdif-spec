@@ -1,0 +1,48 @@
+{
+  "name": "UtilityNetwork",
+  "file": "utility-network",
+  "types": [
+    "erdif:UtilityNetwork"
+  ],
+  "description": {
+    "cs": "Napojení nemovitosti na inženýrskou síť. Síť a způsob připojení jsou dvě nezávislé osy, proto dva číselníky.",
+    "en": "Connection of the property to a utility network. Network and connection are two independent axes, hence two codelists."
+  },
+  "properties": [
+    {
+      "term": "network",
+      "iri": "erdif:network",
+      "range": "erdif-cl:UtilityNetwork",
+      "required": true,
+      "codelist": "UtilityNetwork",
+      "description": {
+        "cs": "Druh inženýrské sítě.",
+        "en": "Type of utility network."
+      }
+    },
+    {
+      "term": "connection",
+      "iri": "erdif:connection",
+      "range": "erdif-cl:UtilityConnection",
+      "required": true,
+      "codelist": "UtilityConnection",
+      "description": {
+        "cs": "Způsob napojení na danou síť.",
+        "en": "Means of connection to the given network."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "connection-matches-network",
+      "description": {
+        "cs": "`connection` musí odpovídat dané síti (`appliesTo` hodnoty v číselníku `UtilityConnection` obsahuje danou síť).",
+        "en": "`connection` must be applicable to the given `network` (`appliesTo` of the value in the `UtilityConnection` codelist contains the network)."
+      },
+      "appliesTo": {
+        "property": "connection",
+        "valueFrom": "network"
+      }
+    }
+  ]
+}

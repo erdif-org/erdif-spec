@@ -1,0 +1,281 @@
+{
+  "name": "Realty",
+  "file": "realty",
+  "types": [
+    "schema:Accommodation",
+    "erdif:Realty"
+  ],
+  "description": {
+    "cs": "Fyzická nemovitost. Oddělena od obchodní části, protože její popis je nezávislý na tom, jak je právě inzerována.",
+    "en": "The physical property. Kept separate from the commercial part because its description is independent of how it is currently advertised."
+  },
+  "properties": [
+    {
+      "term": "realtyType",
+      "iri": "erdif:realtyType",
+      "range": "erdif-cl:RealtyType",
+      "required": true,
+      "codelist": "RealtyType",
+      "description": {
+        "cs": "Druh nemovitosti.",
+        "en": "Type of real estate."
+      }
+    },
+    {
+      "term": "ownershipType",
+      "iri": "erdif:ownershipType",
+      "range": "erdif-cl:OwnershipType",
+      "required": false,
+      "codelist": "OwnershipType",
+      "description": {
+        "cs": "Forma vlastnictví.",
+        "en": "Form of ownership."
+      }
+    },
+    {
+      "term": "energyClass",
+      "iri": "erdif:energyClass",
+      "range": "erdif-cl:EnergyClass",
+      "required": false,
+      "codelist": "EnergyClass",
+      "description": {
+        "cs": "Energetická třída podle směrnice EPBD.",
+        "en": "Energy class per the EPBD directive."
+      }
+    },
+    {
+      "term": "condition",
+      "iri": "erdif:condition",
+      "range": "erdif-cl:RealtyCondition",
+      "required": false,
+      "codelist": "RealtyCondition",
+      "description": {
+        "cs": "Stav samotné nemovitosti; může se lišit od stavu budovy.",
+        "en": "Condition of the property itself; may differ from the condition of the building."
+      }
+    },
+    {
+      "term": "floorSize",
+      "iri": "schema:floorSize",
+      "range": "schema:QuantitativeValue",
+      "required": false,
+      "description": {
+        "cs": "Celková podlahová plocha stavby nebo jednotky v m² (`MTK`).",
+        "en": "Total floor area of the building or unit in square metres (`MTK`)."
+      },
+      "jsonSchema": {
+        "properties": {
+          "unitCode": {
+            "const": "MTK"
+          }
+        }
+      }
+    },
+    {
+      "term": "plotSize",
+      "iri": "erdif:plotSize",
+      "range": "schema:QuantitativeValue",
+      "required": false,
+      "description": {
+        "cs": "Plocha pozemku v m² (`MTK`).",
+        "en": "Area of the land plot in square metres (`MTK`)."
+      },
+      "jsonSchema": {
+        "properties": {
+          "unitCode": {
+            "const": "MTK"
+          }
+        }
+      }
+    },
+    {
+      "term": "floorLevel",
+      "iri": "erdif:floorLevel",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Podlaží, ve kterém se jednotka nachází (0 = přízemí, záporné = podzemní).",
+        "en": "Floor on which the unit is located (0 = ground floor, negative = underground)."
+      }
+    },
+    {
+      "term": "accessibility",
+      "iri": "erdif:accessibility",
+      "range": "erdif-cl:AccessibilityFeature",
+      "required": false,
+      "cardinality": "0..*",
+      "codelist": "AccessibilityFeature",
+      "description": {
+        "cs": "Prvky bezbariérovosti nemovitosti jako celku (vstup, přístup).",
+        "en": "Accessibility features of the property as a whole (entrance, access)."
+      }
+    },
+    {
+      "term": "location",
+      "iri": "erdif:location",
+      "range": "erdif:Location",
+      "required": true,
+      "description": {
+        "cs": "Poloha nemovitosti.",
+        "en": "Location of the property."
+      }
+    },
+    {
+      "term": "building",
+      "iri": "erdif:building",
+      "range": "erdif:Building",
+      "required": false,
+      "description": {
+        "cs": "Budova, jejíž je nemovitost součástí nebo kterou tvoří. U pozemků se neuvádí.",
+        "en": "Building the property is part of or consists of. Omitted for land."
+      }
+    },
+    {
+      "term": "rooms",
+      "iri": "erdif:room",
+      "range": "erdif:Room",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Členění nemovitosti na místnosti. Pozemky žádné nemají.",
+        "en": "Breakdown into rooms. Land parcels have none."
+      }
+    },
+    {
+      "term": "utilityNetworks",
+      "iri": "erdif:utilityNetwork",
+      "range": "erdif:UtilityNetwork",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Napojení na inženýrské sítě.",
+        "en": "Utility network connections."
+      }
+    },
+    {
+      "term": "parking",
+      "iri": "erdif:parking",
+      "range": "erdif:Parking",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Možnosti parkování náležející k nemovitosti.",
+        "en": "Parking options belonging to the property."
+      }
+    },
+    {
+      "term": "localArea",
+      "iri": "erdif:localArea",
+      "range": "erdif:LocalArea",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Občanská vybavenost v okolí nemovitosti (doprava, školy, parky, ...).",
+        "en": "Amenities in the surroundings of the property (transport, schools, parks, ...)."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "realty-area",
+      "description": {
+        "cs": "`floorSize` je povinná, pokud `realtyType` není `Land`; `plotSize` je povinná, pokud `realtyType` je `Land`. Tím je splněna povinná plocha mezinárodního jádra.",
+        "en": "`floorSize` is required unless `realtyType` is `Land`; `plotSize` is required when `realtyType` is `Land`. This satisfies the mandatory area of the international core."
+      },
+      "jsonSchema": {
+        "if": {
+          "required": [
+            "realtyType"
+          ],
+          "properties": {
+            "realtyType": {
+              "const": "Land"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "plotSize"
+          ]
+        },
+        "else": {
+          "required": [
+            "floorSize"
+          ]
+        }
+      }
+    },
+    {
+      "id": "land-has-no-rooms",
+      "description": {
+        "cs": "Je-li `realtyType` `Land`, musí `rooms` chybět nebo být prázdné.",
+        "en": "When `realtyType` is `Land`, `rooms` must be absent or empty."
+      },
+      "jsonSchema": {
+        "if": {
+          "required": [
+            "realtyType"
+          ],
+          "properties": {
+            "realtyType": {
+              "const": "Land"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "rooms": {
+              "maxItems": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accessibility-level",
+      "description": {
+        "cs": "Hodnoty `accessibility` musí být použitelné na úrovni nemovitosti (`appliesTo` v číselníku `AccessibilityFeature` obsahuje `Realty`).",
+        "en": "Values of `accessibility` must be applicable to the property level (`appliesTo` contains `Realty` in the `AccessibilityFeature` codelist)."
+      },
+      "appliesTo": {
+        "property": "accessibility",
+        "value": "Realty"
+      }
+    },
+    {
+      "id": "land-has-no-building",
+      "description": {
+        "cs": "Je-li `realtyType` `Land`, musí `building` i `floorLevel` chybět.",
+        "en": "When `realtyType` is `Land`, `building` and `floorLevel` must be absent."
+      },
+      "jsonSchema": {
+        "if": {
+          "required": [
+            "realtyType"
+          ],
+          "properties": {
+            "realtyType": {
+              "const": "Land"
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "building"
+                ]
+              },
+              {
+                "required": [
+                  "floorLevel"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

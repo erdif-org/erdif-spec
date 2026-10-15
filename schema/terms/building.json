@@ -1,0 +1,89 @@
+{
+  "name": "Building",
+  "file": "building",
+  "types": [
+    "erdif:Building"
+  ],
+  "description": {
+    "cs": "Budova, ke které nemovitost patří. Její vlastnosti sdílejí všechny jednotky v budově, proto jsou oddělené od samotné jednotky.",
+    "en": "The building the property belongs to. Its attributes are shared by all units in the building, so they are kept apart from the unit itself."
+  },
+  "properties": [
+    {
+      "term": "constructionType",
+      "iri": "erdif:constructionType",
+      "range": "erdif-cl:ConstructionType",
+      "required": false,
+      "codelist": "ConstructionType",
+      "description": {
+        "cs": "Hlavní nosná konstrukce budovy.",
+        "en": "Main load-bearing construction of the building."
+      }
+    },
+    {
+      "term": "yearBuilt",
+      "iri": "schema:yearBuilt",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Rok dokončení budovy.",
+        "en": "Year the building was completed."
+      }
+    },
+    {
+      "term": "lastRenovationYear",
+      "iri": "erdif:lastRenovationYear",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Rok poslední rozsáhlé rekonstrukce budovy.",
+        "en": "Year of the last major renovation of the building."
+      }
+    },
+    {
+      "term": "floorsAboveGround",
+      "iri": "erdif:floorsAboveGround",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Počet nadzemních podlaží včetně přízemí.",
+        "en": "Number of above-ground floors including the ground floor."
+      },
+      "jsonSchema": {
+        "minimum": 1
+      }
+    },
+    {
+      "term": "floorsUnderground",
+      "iri": "erdif:floorsUnderground",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Počet podzemních podlaží.",
+        "en": "Number of underground floors."
+      },
+      "jsonSchema": {
+        "minimum": 0
+      }
+    },
+    {
+      "term": "elevator",
+      "iri": "erdif:elevator",
+      "range": "xsd:boolean",
+      "required": false,
+      "description": {
+        "cs": "Příznak, zda je v budově výtah.",
+        "en": "Flag indicating whether the building has an elevator."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "renovation-after-construction",
+      "description": {
+        "cs": "`lastRenovationYear` nesmí být dřívější než `yearBuilt`.",
+        "en": "`lastRenovationYear`, when present, must not be earlier than `yearBuilt`."
+      }
+    }
+  ]
+}

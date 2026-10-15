@@ -1,0 +1,35 @@
+{
+  "name": "Equipment",
+  "file": "equipment",
+  "types": [
+    "erdif:Equipment"
+  ],
+  "description": {
+    "cs": "Prvek vybavení vázaný na konkrétní místnost.",
+    "en": "An item of equipment bound to a specific room."
+  },
+  "properties": [
+    {
+      "term": "equipmentType",
+      "iri": "erdif:equipmentType",
+      "range": "erdif-cl:EquipmentType",
+      "required": true,
+      "codelist": "EquipmentType",
+      "description": {
+        "cs": "Kategorie vybavení.",
+        "en": "Category of equipment."
+      }
+    },
+    {
+      "term": "name",
+      "iri": "schema:name",
+      "range": "rdf:langString",
+      "required": false,
+      "languageMap": true,
+      "description": {
+        "cs": "Označení prvku vybavení.",
+        "en": "Label of the equipment item."
+      }
+    }
+  ]
+}

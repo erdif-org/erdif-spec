@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/realty.schema.json",
+  "title": "Realty",
+  "description": "The physical property. Kept separate from the commercial part because its description is independent of how it is currently advertised.",
+  "type": "object",
+  "required": [
+    "@type",
+    "realtyType",
+    "location"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Realty`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Realty"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Realty"
+          }
+        }
+      ]
+    },
+    "realtyType": {
+      "description": "Type of real estate.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Apartment",
+        "House",
+        "Land",
+        "Commercial",
+        "Parking"
+      ]
+    },
+    "ownershipType": {
+      "description": "Form of ownership.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Personal",
+        "Cooperative",
+        "Municipal",
+        "State"
+      ]
+    },
+    "energyClass": {
+      "description": "Energy class per the EPBD directive.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "A+",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "condition": {
+      "description": "Condition of the property itself; may differ from the condition of the building.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "New",
+        "VeryGood",
+        "Good",
+        "AfterRenovation",
+        "NeedsRenovation",
+        "UnderConstruction"
+      ]
+    },
+    "floorSize": {
+      "description": "Total floor area of the building or unit in square metres (`MTK`).",
+      "$ref": "common.schema.json#/$defs/QuantitativeValue",
+      "properties": {
+        "unitCode": {
+          "const": "MTK"
+        }
+      }
+    },
+    "plotSize": {
+      "description": "Area of the land plot in square metres (`MTK`).",
+      "$ref": "common.schema.json#/$defs/QuantitativeValue",
+      "properties": {
+        "unitCode": {
+          "const": "MTK"
+        }
+      }
+    },
+    "floorLevel": {
+      "description": "Floor on which the unit is located (0 = ground floor, negative = underground).",
+      "type": "integer"
+    },
+    "accessibility": {
+      "description": "Accessibility features of the property as a whole (entrance, access).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "examples": [
+          "BarrierFree",
+          "StepFreeEntrance",
+          "ElevatorAccess",
+          "StairLift",
+          "WideDoorways",
+          "ThresholdFree",
+          "WheelchairTurningSpace",
+          "WalkInShower",
+          "GrabBars"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "location": {
+      "description": "Location of the property.",
+      "$ref": "location.schema.json"
+    },
+    "building": {
+      "description": "Building the property is part of or consists of. Omitted for land.",
+      "$ref": "building.schema.json"
+    },
+    "rooms": {
+      "description": "Breakdown into rooms. Land parcels have none.",
+      "type": "array",
+      "items": {
+        "$ref": "room.schema.json"
+      }
+    },
+    "utilityNetworks": {
+      "description": "Utility network connections.",
+      "type": "array",
+      "items": {
+        "$ref": "utility-network.schema.json"
+      }
+    },
+    "parking": {
+      "description": "Parking options belonging to the property.",
+      "type": "array",
+      "items": {
+        "$ref": "parking.schema.json"
+      }
+    },
+    "localArea": {
+      "description": "Amenities in the surroundings of the property (transport, schools, parks, ...).",
+      "type": "array",
+      "items": {
+        "$ref": "local-area.schema.json"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "realty-area",
+      "if": {
+        "required": [
+          "realtyType"
+        ],
+        "properties": {
+          "realtyType": {
+            "const": "Land"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "plotSize"
+        ]
+      },
+      "else": {
+        "required": [
+          "floorSize"
+        ]
+      }
+    },
+    {
+      "$comment": "land-has-no-rooms",
+      "if": {
+        "required": [
+          "realtyType"
+        ],
+        "properties": {
+          "realtyType": {
+            "const": "Land"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rooms": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "$comment": "accessibility-level",
+      "properties": {
+        "accessibility": {
+          "items": {
+            "not": {
+              "enum": [
+                "WheelchairTurningSpace",
+                "WalkInShower",
+                "GrabBars"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "$comment": "land-has-no-building",
+      "if": {
+        "required": [
+          "realtyType"
+        ],
+        "properties": {
+          "realtyType": {
+            "const": "Land"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "building"
+              ]
+            },
+            {
+              "required": [
+                "floorLevel"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

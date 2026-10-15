@@ -1,0 +1,50 @@
+{
+  "name": "InspireIdentifier",
+  "file": "inspire-identifier",
+  "types": [
+    "erdif:InspireIdentifier"
+  ],
+  "description": {
+    "cs": "Nadnárodní identifikátor prostorového objektu INSPIRE (adresní místo, budova nebo parcela).",
+    "en": "Supranational INSPIRE identifier of a spatial object (address, building or cadastral parcel)."
+  },
+  "properties": [
+    {
+      "term": "theme",
+      "iri": "erdif:inspireTheme",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Kód tématu INSPIRE: `AD` (adresy), `BU` (budovy), `CP` (katastrální parcely).",
+        "en": "INSPIRE theme code: `AD` (addresses), `BU` (buildings), `CP` (cadastral parcels)."
+      },
+      "jsonSchema": {
+        "enum": [
+          "AD",
+          "BU",
+          "CP"
+        ]
+      }
+    },
+    {
+      "term": "namespace",
+      "iri": "erdif:inspireNamespace",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Jmenný prostor poskytovatele dat (např. `CZ.CUZK.AD`).",
+        "en": "Namespace of the data provider (e.g. `CZ.CUZK.AD`)."
+      }
+    },
+    {
+      "term": "localId",
+      "iri": "erdif:inspireLocalId",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Identifikátor objektu v rámci jmenného prostoru.",
+        "en": "Identifier of the object within the namespace."
+      }
+    }
+  ]
+}

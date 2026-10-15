@@ -1,0 +1,43 @@
+{
+  "name": "ContactType",
+  "description": {
+    "en": "Type of advertiser.",
+    "cs": "Typ inzerenta."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Agent",
+      "labels": {
+        "en": "Agent",
+        "cs": "Makléř"
+      },
+      "description": {
+        "en": "Individual real estate agent.",
+        "cs": "Jednotlivý realitní makléř."
+      }
+    },
+    {
+      "code": "Office",
+      "labels": {
+        "en": "Real estate office",
+        "cs": "Realitní kancelář"
+      },
+      "description": {
+        "en": "Real estate agency as an organisation.",
+        "cs": "Realitní kancelář jako organizace."
+      }
+    },
+    {
+      "code": "Owner",
+      "labels": {
+        "en": "Owner",
+        "cs": "Majitel"
+      },
+      "description": {
+        "en": "Owner of the property advertising directly.",
+        "cs": "Vlastník nemovitosti inzerující přímo."
+      }
+    }
+  ]
+}

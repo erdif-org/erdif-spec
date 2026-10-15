@@ -1,0 +1,98 @@
+{
+  "name": "EnergyClass",
+  "description": {
+    "en": "Energy performance class per the EPBD directive.",
+    "cs": "Třída energetické náročnosti podle směrnice EPBD."
+  },
+  "closed": false,
+  "values": [
+{
+      "code": "A+",
+      "labels": {
+        "en": "A+",
+        "cs": "A+"
+      },
+      "description": {
+        "en": "Positive energy building (generates more renewable energy on-site than consumed).",
+        "cs": "Plusová budova (vyrobí na místě více energie z OZE, než sama spotřebuje)."
+      }
+    },
+    {
+      "code": "A",
+      "labels": {
+        "en": "A",
+        "cs": "A"
+      },
+      "description": {
+        "en": "Zero-emission building (ZEB).",
+        "cs": "Bezemisní budova (ZEB) / Mimořádně úsporná."
+      }
+    },
+    {
+      "code": "B",
+      "labels": {
+        "en": "B",
+        "cs": "B"
+      },
+      "description": {
+        "en": "Very efficient.",
+        "cs": "Velmi úsporná."
+      }
+    },
+    {
+      "code": "C",
+      "labels": {
+        "en": "C",
+        "cs": "C"
+      },
+      "description": {
+        "en": "Efficient.",
+        "cs": "Úsporná."
+      }
+    },
+    {
+      "code": "D",
+      "labels": {
+        "en": "D",
+        "cs": "D"
+      },
+      "description": {
+        "en": "Less efficient.",
+        "cs": "Méně úsporná."
+      }
+    },
+    {
+      "code": "E",
+      "labels": {
+        "en": "E",
+        "cs": "E"
+      },
+      "description": {
+        "en": "Inefficient.",
+        "cs": "Nehospodárná."
+      }
+    },
+    {
+      "code": "F",
+      "labels": {
+        "en": "F",
+        "cs": "F"
+      },
+      "description": {
+        "en": "Very inefficient.",
+        "cs": "Velmi nehospodárná."
+      }
+    },
+    {
+      "code": "G",
+      "labels": {
+        "en": "G",
+        "cs": "G"
+      },
+      "description": {
+        "en": "Extremely inefficient.",
+        "cs": "Mimořádně nehospodárná."
+      }
+    }
+  ]
+}

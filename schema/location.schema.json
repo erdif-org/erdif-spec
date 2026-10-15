@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/location.schema.json",
+  "title": "Location",
+  "description": "Location of the property combining three independent means of identification.",
+  "type": "object",
+  "required": [
+    "@type",
+    "geo",
+    "approximateCoordinates"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Location`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Location"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Location"
+          }
+        }
+      ]
+    },
+    "globalIdentifier": {
+      "description": "Supranational INSPIRE spatial identifier.",
+      "$ref": "inspire-identifier.schema.json"
+    },
+    "geo": {
+      "description": "WGS 84 coordinates. Mandatory fallback.",
+      "$ref": "common.schema.json#/$defs/GeoCoordinates"
+    },
+    "approximateCoordinates": {
+      "description": "Flag indicating whether coordinates are approximate.",
+      "type": "boolean"
+    },
+    "localIdentifiers": {
+      "description": "National registry identifiers (e.g. RUIAN).",
+      "type": "array",
+      "items": {
+        "$ref": "local-identifier.schema.json"
+      }
+    },
+    "address": {
+      "description": "Postal address in local format.",
+      "$ref": "common.schema.json#/$defs/PostalAddress"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "@context": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld",
+  "@type": ["RealEstateListing", "erdif:Advert"],
+
+  "formatVersion": "1.0.0-beta.1",
+  "identifier": "ADV-2026-009874",
+  "datePosted": "2026-09-09T16:30:00Z",
+  "transactionType": "Sale",
+
+  "description": {
+    "cs": "Prostorný byt 2+kk v cihlovém domě po rekonstrukci, orientace na jihozápad. Nedaleko stanice metra a parku.",
+    "en": "Spacious two-room apartment in a renovated brick building, south-west facing. Close to a metro station and a park.",
+    "de": "Geräumige Zwei-Zimmer-Wohnung in einem sanierten Backsteinhaus, nach Südwesten ausgerichtet."
+  },
+
+  "prices": [
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "Purchase",
+      "price": 8950000,
+      "priceCurrency": "CZK",
+      "negotiable": true
+    },
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "ServiceCharges",
+      "price": 3400,
+      "priceCurrency": "CZK",
+      "unitCode": "MON",
+      "negotiable": false
+    },
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "Parking",
+      "price": 450000,
+      "priceCurrency": "CZK",
+      "negotiable": false
+    }
+  ],
+
+  "contact": {
+    "@type": ["RealEstateAgent", "erdif:Contact"],
+    "contactType": "Agent",
+    "name": { "cs": "Jan Novák", "en": "Jan Novák" },
+    "email": "jan.novak@example.com",
+    "telephone": "+420123456789"
+  },
+
+  "realty": {
+    "@type": ["Apartment", "erdif:Realty"],
+    "realtyType": "Apartment",
+    "ownershipType": "Personal",
+    "energyClass": "C",
+    "condition": "AfterRenovation",
+
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 58.4,
+      "unitCode": "MTK"
+    },
+    "floorLevel": 3,
+    "accessibility": ["ElevatorAccess"],
+
+    "building": {
+      "@type": "erdif:Building",
+      "constructionType": "Brick",
+      "yearBuilt": 1912,
+      "lastRenovationYear": 2019,
+      "floorsAboveGround": 5,
+      "floorsUnderground": 1,
+      "elevator": true
+    },
+
+    "location": {
+      "@type": ["Place", "erdif:Location"],
+
+      "globalIdentifier": {
+        "@type": "erdif:InspireIdentifier",
+        "theme": "AD",
+        "namespace": "CZ.CUZK.AD",
+        "localId": "26777598"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.07553,
+        "longitude": 14.43781
+      },
+      "approximateCoordinates": false,
+
+      "localIdentifiers": [
+        {
+          "@type": "erdif:LocalIdentifier",
+          "registry": "RUIAN",
+          "registryCountry": "CZ",
+          "registryLevel": "Address",
+          "identifier": "22349811"
+        }
+      ],
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Korunní 810/104",
+        "addressLocality": "Praha",
+        "addressRegion": "Praha",
+        "postalCode": "10100",
+        "addressCountry": "CZ"
+      }
+    },
+
+    "rooms": [
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "LivingKitchen",
+        "floorSize": { "@type": "QuantitativeValue", "value": 28.0, "unitCode": "MTK" },
+        "floorLevel": 3,
+        "equipment": [
+          {
+            "@type": "erdif:Equipment",
+            "equipmentType": "Appliance",
+            "name": { "cs": "Lednice", "en": "Refrigerator" }
+          },
+          {
+            "@type": "erdif:Equipment",
+            "equipmentType": "Appliance",
+            "name": { "cs": "Indukční varná deska", "en": "Induction hob" }
+          }
+        ]
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bedroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 18.6, "unitCode": "MTK" },
+        "floorLevel": 3
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bathroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 6.2, "unitCode": "MTK" },
+        "floorLevel": 3
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Toilet",
+        "floorSize": { "@type": "QuantitativeValue", "value": 1.8, "unitCode": "MTK" },
+        "floorLevel": 3
+      }
+    ],
+
+    "utilityNetworks": [
+      { "@type": "erdif:UtilityNetwork", "network": "Water", "connection": "PublicMains" },
+      { "@type": "erdif:UtilityNetwork", "network": "Sewage", "connection": "PublicSewer" },
+      { "@type": "erdif:UtilityNetwork", "network": "Electricity", "connection": "Grid" },
+      { "@type": "erdif:UtilityNetwork", "network": "Heating", "connection": "DistrictCentral" }
+    ],
+
+    "parking": [
+      {
+        "@type": "erdif:Parking",
+        "parkingType": "GarageSpace",
+        "count": 1,
+        "includedInPrice": false
+      }
+    ],
+
+    "localArea": [
+      {
+        "@type": ["SubwayStation", "erdif:LocalArea"],
+        "amenityType": "MetroStation",
+        "name": { "cs": "Náměstí Míru" },
+        "distance": { "@type": "QuantitativeValue", "value": 350, "unitCode": "MTR" }
+      },
+      {
+        "@type": ["Preschool", "erdif:LocalArea"],
+        "amenityType": "Kindergarten",
+        "distance": { "@type": "QuantitativeValue", "value": 200, "unitCode": "MTR" }
+      },
+      {
+        "@type": ["Park", "erdif:LocalArea"],
+        "amenityType": "Park",
+        "name": { "cs": "Riegrovy sady" },
+        "distance": { "@type": "QuantitativeValue", "value": 400, "unitCode": "MTR" }
+      }
+    ]
+  },
+
+  "media": [
+    {
+      "@type": ["ImageObject", "erdif:Media"],
+      "mediaType": "InsidePhoto",
+      "contentUrl": "https://cdn.example.com/adverts/009874/01.jpg",
+      "position": 1,
+      "caption": {
+        "cs": "Obývací pokoj s kuchyňským koutem",
+        "en": "Living room with a kitchenette"
+      }
+    },
+    {
+      "@type": ["ImageObject", "erdif:Media"],
+      "mediaType": "FloorPlan",
+      "contentUrl": "https://cdn.example.com/adverts/009874/plan.png",
+      "position": 2,
+      "caption": {
+        "cs": "Půdorys bytu",
+        "en": "Floor plan of the apartment"
+      }
+    }
+  ],
+
+  "exportInformation": {
+    "@type": "erdif:ExportInformation",
+    "sourceSystem": "RealiSoft",
+    "sourceAdvertId": "EXT-12345",
+    "exportedAt": "2026-09-09T16:30:00Z"
+  }
+}

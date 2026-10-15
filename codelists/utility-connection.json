@@ -1,0 +1,292 @@
+{
+  "name": "UtilityConnection",
+  "description": {
+    "en": "Means of connection to a utility network. `appliesTo` lists the networks the value belongs to.",
+    "cs": "Způsob napojení na inženýrskou síť. `appliesTo` uvádí sítě, ke kterým hodnota patří."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "PublicMains",
+      "labels": {
+        "en": "Public mains",
+        "cs": "Veřejný vodovodní řad"
+      },
+      "description": {
+        "en": "Connection to the public mains.",
+        "cs": "Napojení na veřejný vodovod."
+      },
+      "appliesTo": [
+        "Water"
+      ]
+    },
+    {
+      "code": "PrivateWell",
+      "labels": {
+        "en": "Private well",
+        "cs": "Vlastní studna"
+      },
+      "description": {
+        "en": "Connection to a private well.",
+        "cs": "Napojení na vlastní studnu."
+      },
+      "appliesTo": [
+        "Water"
+      ]
+    },
+    {
+      "code": "PublicSewer",
+      "labels": {
+        "en": "Public sewer",
+        "cs": "Veřejná kanalizace"
+      },
+      "description": {
+        "en": "Connection to the public sewer.",
+        "cs": "Napojení na veřejnou kanalizaci."
+      },
+      "appliesTo": [
+        "Sewage"
+      ]
+    },
+    {
+      "code": "SepticTank",
+      "labels": {
+        "en": "Septic tank",
+        "cs": "Septik / jímka"
+      },
+      "description": {
+        "en": "Septic or holding tank.",
+        "cs": "Septik nebo jímka."
+      },
+      "appliesTo": [
+        "Sewage"
+      ]
+    },
+    {
+      "code": "Grid",
+      "labels": {
+        "en": "Grid",
+        "cs": "Distribuční síť"
+      },
+      "description": {
+        "en": "Connection to the distribution grid.",
+        "cs": "Napojení na distribuční síť."
+      },
+      "appliesTo": [
+        "Electricity"
+      ]
+    },
+    {
+      "code": "OffGrid",
+      "labels": {
+        "en": "Off-grid",
+        "cs": "Ostrovní systém"
+      },
+      "description": {
+        "en": "Connection to an off-grid electricity network.",
+        "cs": "Napojení na ostrovní elektrickou síť."
+      },
+      "appliesTo": [
+        "Electricity"
+      ]
+    },
+    {
+      "code": "DistrictCentral",
+      "labels": {
+        "en": "District heating",
+        "cs": "Dálkové vytápění"
+      },
+      "description": {
+        "en": "Connection to a district heating network.",
+        "cs": "Napojení na dálkové vytápění."
+      },
+      "appliesTo": [
+        "Heating"
+      ]
+    },
+    {
+      "code": "HeatPump",
+      "labels": {
+        "en": "Heat pump",
+        "cs": "Tepelné čerpadlo"
+      },
+      "description": {
+        "en": "Heat pump; a reversible unit also provides cooling.",
+        "cs": "Tepelné čerpadlo; reverzibilní jednotka slouží i k chlazení."
+      },
+      "appliesTo": [
+        "Heating",
+        "Cooling"
+      ]
+    },
+    {
+      "code": "GasBoiler",
+      "labels": {
+        "en": "Gas boiler",
+        "cs": "Plynový kotel"
+      },
+      "description": {
+        "en": "Connection to a gas boiler.",
+        "cs": "Napojení na plynový kotel."
+      },
+      "appliesTo": [
+        "Heating"
+      ]
+    },
+    {
+      "code": "DistrictCooling",
+      "labels": {
+        "en": "District cooling",
+        "cs": "Dálkové chlazení"
+      },
+      "description": {
+        "en": "Connection to a district cooling network.",
+        "cs": "Napojení na síť dálkového chlazení."
+      },
+      "appliesTo": [
+        "Cooling"
+      ]
+    },
+    {
+      "code": "AirConditioning",
+      "labels": {
+        "en": "Air conditioning",
+        "cs": "Klimatizace"
+      },
+      "description": {
+        "en": "Air conditioning unit; a reversible unit also provides heating.",
+        "cs": "Klimatizační jednotka; reverzibilní jednotka slouží i k vytápění."
+      },
+      "appliesTo": [
+        "Cooling",
+        "Heating"
+      ]
+    },
+    {
+      "code": "PublicGasMains",
+      "labels": {
+        "en": "Public gas mains",
+        "cs": "Veřejný plynovod"
+      },
+      "description": {
+        "en": "Connection to the public gas distribution network.",
+        "cs": "Napojení na veřejnou plynárenskou distribuční soustavu."
+      },
+      "appliesTo": [
+        "Gas"
+      ]
+    },
+    {
+      "code": "LpgTank",
+      "labels": {
+        "en": "LPG tank",
+        "cs": "Zásobník LPG"
+      },
+      "description": {
+        "en": "Own liquefied petroleum gas tank.",
+        "cs": "Vlastní zásobník zkapalněného plynu."
+      },
+      "appliesTo": [
+        "Gas"
+      ]
+    },
+    {
+      "code": "FixedLine",
+      "labels": {
+        "en": "Fixed line",
+        "cs": "Pevná linka"
+      },
+      "description": {
+        "en": "Connection to a fixed telephone line.",
+        "cs": "Napojení na pevnou telefonní linku."
+      },
+      "appliesTo": [
+        "Telecom"
+      ]
+    },
+    {
+      "code": "FiberOptic",
+      "labels": {
+        "en": "Fibre optic",
+        "cs": "Optické vlákno"
+      },
+      "description": {
+        "en": "Internet over a fibre-optic connection.",
+        "cs": "Internet přes optickou přípojku."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    },
+    {
+      "code": "Dsl",
+      "labels": {
+        "en": "DSL",
+        "cs": "DSL"
+      },
+      "description": {
+        "en": "Internet over a telephone line (xDSL).",
+        "cs": "Internet přes telefonní vedení (xDSL)."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    },
+    {
+      "code": "CableInternet",
+      "labels": {
+        "en": "Cable",
+        "cs": "Kabelový internet"
+      },
+      "description": {
+        "en": "Internet over a cable television network.",
+        "cs": "Internet přes síť kabelové televize."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    },
+    {
+      "code": "FixedWireless",
+      "labels": {
+        "en": "Fixed wireless",
+        "cs": "Pevné bezdrátové připojení"
+      },
+      "description": {
+        "en": "Internet over a fixed wireless (WiFi/radio) link.",
+        "cs": "Internet přes pevné bezdrátové (WiFi/rádiové) spojení."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    },
+    {
+      "code": "MobileNetwork",
+      "labels": {
+        "en": "Mobile network",
+        "cs": "Mobilní síť"
+      },
+      "description": {
+        "en": "Internet over a mobile network (LTE/5G).",
+        "cs": "Internet přes mobilní síť (LTE/5G)."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    },
+    {
+      "code": "Satellite",
+      "labels": {
+        "en": "Satellite",
+        "cs": "Satelitní připojení"
+      },
+      "description": {
+        "en": "Internet over a satellite link.",
+        "cs": "Internet přes satelitní spojení."
+      },
+      "appliesTo": [
+        "Internet"
+      ]
+    }
+  ]
+}

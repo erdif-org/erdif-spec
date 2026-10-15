@@ -1,0 +1,82 @@
+{
+  "_comment": "INVALID: a land parcel (`realtyType: Land`) lists rooms (rule land-has-no-rooms).",
+  "_expect": {
+    "path": "/realty/rooms",
+    "keyword": "maxItems"
+  },
+  "@context": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld",
+  "@type": [
+    "RealEstateListing",
+    "erdif:Advert"
+  ],
+  "formatVersion": "1.0.0-beta.1",
+  "identifier": "ADV-2026-000101",
+  "datePosted": "2026-09-01T09:00:00Z",
+  "transactionType": "Sale",
+  "description": {
+    "en": "Building plot on the edge of the village."
+  },
+  "prices": [
+    {
+      "@type": [
+        "PriceSpecification",
+        "erdif:Price"
+      ],
+      "priceType": "Purchase",
+      "price": 5200000,
+      "priceCurrency": "CZK"
+    }
+  ],
+  "contact": {
+    "@type": [
+      "RealEstateAgent",
+      "erdif:Contact"
+    ],
+    "contactType": "Agent",
+    "name": {
+      "cs": "Jan Novák",
+      "en": "Jan Novák"
+    },
+    "email": "jan.novak@example.com",
+    "telephone": "+420123456789"
+  },
+  "realty": {
+    "@type": [
+      "Place",
+      "erdif:Realty"
+    ],
+    "realtyType": "Land",
+    "plotSize": {
+      "@type": "QuantitativeValue",
+      "value": 1250,
+      "unitCode": "MTK"
+    },
+    "location": {
+      "@type": [
+        "Place",
+        "erdif:Location"
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.0755,
+        "longitude": 14.4378
+      },
+      "approximateCoordinates": false
+    },
+    "rooms": [
+      {
+        "@type": [
+          "Room",
+          "erdif:Room"
+        ],
+        "roomType": "LivingRoom"
+      }
+    ]
+  },
+  "exportInformation": {
+    "@type": "erdif:ExportInformation",
+    "sourceSystem": "RealiSoft",
+    "sourceAdvertId": "EXT-101",
+    "exportedAt": "2026-09-01T09:00:00Z"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "ParkingType",
+  "description": {
+    "en": "Type of parking.",
+    "cs": "Druh parkování."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "OutdoorSpace",
+      "labels": {
+        "en": "Outdoor space",
+        "cs": "Venkovní stání"
+      },
+      "description": {
+        "en": "Uncovered parking space.",
+        "cs": "Nekryté parkovací stání."
+      }
+    },
+    {
+      "code": "CoveredSpace",
+      "labels": {
+        "en": "Covered space",
+        "cs": "Kryté stání"
+      },
+      "description": {
+        "en": "Parking space under a carport or roof.",
+        "cs": "Parkovací stání pod přístřeškem."
+      }
+    },
+    {
+      "code": "GarageSpace",
+      "labels": {
+        "en": "Garage space",
+        "cs": "Stání v garáži"
+      },
+      "description": {
+        "en": "Space in a shared or underground garage.",
+        "cs": "Stání ve společné nebo podzemní garáži."
+      }
+    },
+    {
+      "code": "PrivateGarage",
+      "labels": {
+        "en": "Private garage",
+        "cs": "Samostatná garáž"
+      },
+      "description": {
+        "en": "Separate lockable garage.",
+        "cs": "Samostatná uzamykatelná garáž."
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Room",
+  "file": "room",
+  "types": [
+    "schema:Room",
+    "erdif:Room"
+  ],
+  "description": {
+    "cs": "Místnost nemovitosti. Z místností lze odvodit dispozici i celkovou užitnou plochu.",
+    "en": "A room of the property. Layout and total usable area can be derived from rooms."
+  },
+  "properties": [
+    {
+      "term": "roomType",
+      "iri": "erdif:roomType",
+      "range": "erdif-cl:RoomType",
+      "required": true,
+      "codelist": "RoomType",
+      "description": {
+        "cs": "Druh místnosti.",
+        "en": "Type of room."
+      }
+    },
+    {
+      "term": "floorSize",
+      "iri": "schema:floorSize",
+      "range": "schema:QuantitativeValue",
+      "required": false,
+      "description": {
+        "cs": "Plocha místnosti v m².",
+        "en": "Room area in square metres."
+      },
+      "jsonSchema": {
+        "properties": {
+          "unitCode": {
+            "const": "MTK"
+          }
+        }
+      }
+    },
+    {
+      "term": "floorLevel",
+      "iri": "erdif:floorLevel",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Podlaží, na kterém se místnost nachází.",
+        "en": "Floor the room is located on."
+      }
+    },
+    {
+      "term": "accessibility",
+      "iri": "erdif:accessibility",
+      "range": "erdif-cl:AccessibilityFeature",
+      "required": false,
+      "cardinality": "0..*",
+      "codelist": "AccessibilityFeature",
+      "description": {
+        "cs": "Prvky bezbariérovosti místnosti.",
+        "en": "Accessibility features of the room."
+      }
+    },
+    {
+      "term": "equipment",
+      "iri": "erdif:equipment",
+      "range": "erdif:Equipment",
+      "required": false,
+      "cardinality": "0..*",
+      "description": {
+        "cs": "Vybavení místnosti. Vázáno na místnost, nikoli na celou nemovitost.",
+        "en": "Room equipment. Bound to the room, not the whole property."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "accessibility-level",
+      "description": {
+        "cs": "Hodnoty `accessibility` musí být použitelné na úrovni místnosti (`appliesTo` v číselníku `AccessibilityFeature` obsahuje `Room`).",
+        "en": "Values of `accessibility` must be applicable to the room level (`appliesTo` contains `Room` in the `AccessibilityFeature` codelist)."
+      },
+      "appliesTo": {
+        "property": "accessibility",
+        "value": "Room"
+      }
+    }
+  ]
+}

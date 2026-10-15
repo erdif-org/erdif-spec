@@ -1,0 +1,205 @@
+{
+  "@context": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld",
+  "@type": ["RealEstateListing", "erdif:Advert"],
+
+  "formatVersion": "1.0.0-beta.1",
+  "identifier": "RK-BRNO-2026-0412",
+  "datePosted": "2026-09-15T08:00:00+02:00",
+  "transactionType": "Rent",
+
+  "description": {
+    "cs": "Pronájem novostavby rodinného domu 4+kk se zahradou a garáží v klidné části Brna. Bezbariérový přístup, tepelné čerpadlo.",
+    "en": "Newly built 4-room family house with a garden and a garage for rent in a quiet part of Brno. Step-free access, heat pump."
+  },
+
+  "prices": [
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "Rent",
+      "price": 38000,
+      "priceCurrency": "CZK",
+      "unitCode": "MON",
+      "negotiable": false
+    },
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "ServiceCharges",
+      "price": 4500,
+      "priceCurrency": "CZK",
+      "unitCode": "MON"
+    },
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "Deposit",
+      "price": 76000,
+      "priceCurrency": "CZK"
+    },
+    {
+      "@type": ["PriceSpecification", "erdif:Price"],
+      "priceType": "Commission",
+      "priceOnRequest": true,
+      "priceCurrency": "CZK"
+    }
+  ],
+
+  "contact": {
+    "@type": ["RealEstateAgent", "erdif:Contact"],
+    "contactType": "Office",
+    "name": { "cs": "Reality Morava s.r.o.", "en": "Reality Morava Ltd." },
+    "telephone": "+420541123456"
+  },
+
+  "realty": {
+    "@type": ["House", "erdif:Realty"],
+    "realtyType": "House",
+    "ownershipType": "Personal",
+    "energyClass": "A",
+    "condition": "VeryGood",
+
+    "floorSize": { "@type": "QuantitativeValue", "value": 132.5, "unitCode": "MTK" },
+    "plotSize": { "@type": "QuantitativeValue", "value": 640, "unitCode": "MTK" },
+    "accessibility": ["StepFreeEntrance", "ThresholdFree"],
+
+    "building": {
+      "@type": "erdif:Building",
+      "constructionType": "Wood",
+      "yearBuilt": 2024,
+      "floorsAboveGround": 2,
+      "floorsUnderground": 0,
+      "elevator": false
+    },
+
+    "location": {
+      "@type": ["Place", "erdif:Location"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.2141,
+        "longitude": 16.5712
+      },
+      "approximateCoordinates": true,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brno",
+        "addressRegion": "Jihomoravský kraj",
+        "postalCode": "61600",
+        "addressCountry": "CZ"
+      }
+    },
+
+    "rooms": [
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "LivingKitchen",
+        "floorSize": { "@type": "QuantitativeValue", "value": 42.0, "unitCode": "MTK" },
+        "floorLevel": 0,
+        "equipment": [
+          {
+            "@type": "erdif:Equipment",
+            "equipmentType": "Appliance",
+            "name": { "cs": "Myčka nádobí", "en": "Dishwasher" }
+          },
+          {
+            "@type": "erdif:Equipment",
+            "equipmentType": "HeatingElement",
+            "name": { "cs": "Podlahové topení", "en": "Underfloor heating" }
+          }
+        ]
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bathroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 8.5, "unitCode": "MTK" },
+        "floorLevel": 0,
+        "accessibility": ["WalkInShower", "GrabBars", "WheelchairTurningSpace"]
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bedroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 16.0, "unitCode": "MTK" },
+        "floorLevel": 1
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bedroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 14.5, "unitCode": "MTK" },
+        "floorLevel": 1
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bedroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 12.0, "unitCode": "MTK" },
+        "floorLevel": 1
+      },
+      {
+        "@type": ["Room", "erdif:Room"],
+        "roomType": "Bathroom",
+        "floorSize": { "@type": "QuantitativeValue", "value": 6.0, "unitCode": "MTK" },
+        "floorLevel": 1
+      }
+    ],
+
+    "utilityNetworks": [
+      { "@type": "erdif:UtilityNetwork", "network": "Water", "connection": "PrivateWell" },
+      { "@type": "erdif:UtilityNetwork", "network": "Sewage", "connection": "SepticTank" },
+      { "@type": "erdif:UtilityNetwork", "network": "Electricity", "connection": "Grid" },
+      { "@type": "erdif:UtilityNetwork", "network": "Heating", "connection": "HeatPump" },
+      { "@type": "erdif:UtilityNetwork", "network": "Cooling", "connection": "HeatPump" },
+      { "@type": "erdif:UtilityNetwork", "network": "Internet", "connection": "FiberOptic" }
+    ],
+
+    "parking": [
+      {
+        "@type": "erdif:Parking",
+        "parkingType": "PrivateGarage",
+        "count": 1,
+        "includedInPrice": true
+      },
+      {
+        "@type": "erdif:Parking",
+        "parkingType": "OutdoorSpace",
+        "count": 2,
+        "includedInPrice": true
+      }
+    ],
+
+    "localArea": [
+      {
+        "@type": ["BusStop", "erdif:LocalArea"],
+        "amenityType": "BusStop",
+        "name": { "cs": "Žabovřeská" },
+        "distance": { "@type": "QuantitativeValue", "value": 180, "unitCode": "MTR" }
+      },
+      {
+        "@type": ["School", "erdif:LocalArea"],
+        "amenityType": "School",
+        "distance": { "@type": "QuantitativeValue", "value": 650, "unitCode": "MTR" }
+      }
+    ]
+  },
+
+  "media": [
+    {
+      "@type": ["ImageObject", "erdif:Media"],
+      "mediaType": "OutsidePhoto",
+      "contentUrl": "https://cdn.example.com/adverts/0412/front.jpg",
+      "position": 1,
+      "caption": {
+        "cs": "Pohled ze zahrady",
+        "en": "View from the garden"
+      }
+    },
+    {
+      "@type": ["MediaObject", "erdif:Media"],
+      "mediaType": "VirtualTour",
+      "contentUrl": "https://tours.example.com/0412",
+      "position": 2
+    }
+  ],
+
+  "exportInformation": {
+    "@type": "erdif:ExportInformation",
+    "sourceSystem": "RealiSoft",
+    "sourceAdvertId": "EXT-40412",
+    "exportedAt": "2026-09-15T08:00:05+02:00"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "UtilityNetwork",
+  "description": {
+    "en": "Type of utility network.",
+    "cs": "Druh inženýrské sítě."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Water",
+      "labels": {
+        "en": "Water supply",
+        "cs": "Vodovod"
+      },
+      "description": {
+        "en": "Drinking water supply.",
+        "cs": "Zásobování pitnou vodou."
+      }
+    },
+    {
+      "code": "Sewage",
+      "labels": {
+        "en": "Sewage",
+        "cs": "Kanalizace"
+      },
+      "description": {
+        "en": "Waste water disposal.",
+        "cs": "Odvod odpadních vod."
+      }
+    },
+    {
+      "code": "Electricity",
+      "labels": {
+        "en": "Electricity",
+        "cs": "Elektřina"
+      },
+      "description": {
+        "en": "Electric power supply.",
+        "cs": "Dodávka elektrické energie."
+      }
+    },
+    {
+      "code": "Heating",
+      "labels": {
+        "en": "Heating",
+        "cs": "Vytápění"
+      },
+      "description": {
+        "en": "Source of space heating.",
+        "cs": "Zdroj vytápění."
+      }
+    },
+    {
+      "code": "Cooling",
+      "labels": {
+        "en": "Cooling",
+        "cs": "Chlazení"
+      },
+      "description": {
+        "en": "Source of space cooling.",
+        "cs": "Zdroj chlazení prostor."
+      }
+    },
+    {
+      "code": "Gas",
+      "labels": {
+        "en": "Gas",
+        "cs": "Plyn"
+      },
+      "description": {
+        "en": "Natural gas supply.",
+        "cs": "Dodávka zemního plynu."
+      }
+    },
+    {
+      "code": "Telecom",
+      "labels": {
+        "en": "Telecommunication",
+        "cs": "Telefonní síť"
+      },
+      "description": {
+        "en": "Telecommunication network.",
+        "cs": "Telefonní síť."
+      }
+    },
+    {
+      "code": "Internet",
+      "labels": {
+        "en": "Internet",
+        "cs": "Internet"
+      },
+      "description": {
+        "en": "Internet connection.",
+        "cs": "Připojení k internetu."
+      }
+    }
+  ]
+}

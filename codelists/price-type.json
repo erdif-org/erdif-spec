@@ -1,0 +1,76 @@
+{
+  "name": "PriceType",
+  "description": {
+    "en": "Type of price item.",
+    "cs": "Typ cenové položky."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Purchase",
+      "labels": {
+        "en": "Purchase price",
+        "cs": "Kupní cena"
+      },
+      "description": {
+        "en": "Price for transfer of ownership.",
+        "cs": "Cena za převod vlastnictví."
+      }
+    },
+    {
+      "code": "Rent",
+      "labels": {
+        "en": "Rent",
+        "cs": "Nájemné"
+      },
+      "description": {
+        "en": "Periodic payment for use of the property.",
+        "cs": "Pravidelná platba za užívání nemovitosti."
+      }
+    },
+    {
+      "code": "ServiceCharges",
+      "labels": {
+        "en": "Service charges",
+        "cs": "Poplatky za služby"
+      },
+      "description": {
+        "en": "Charges for energy and services related to use.",
+        "cs": "Poplatky za energie a služby spojené s užíváním."
+      }
+    },
+    {
+      "code": "Deposit",
+      "labels": {
+        "en": "Deposit",
+        "cs": "Kauce"
+      },
+      "description": {
+        "en": "Refundable security deposit.",
+        "cs": "Vratná peněžitá jistota."
+      }
+    },
+    {
+      "code": "Commission",
+      "labels": {
+        "en": "Commission",
+        "cs": "Provize"
+      },
+      "description": {
+        "en": "Fee for the agent's services.",
+        "cs": "Odměna za služby zprostředkovatele."
+      }
+    },
+    {
+      "code": "Parking",
+      "labels": {
+        "en": "Parking",
+        "cs": "Parkování"
+      },
+      "description": {
+        "en": "Price of parking not included in the main price.",
+        "cs": "Cena parkování, které není zahrnuto v hlavní ceně."
+      }
+    }
+  ]
+}

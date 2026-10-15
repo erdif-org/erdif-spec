@@ -1,0 +1,76 @@
+{
+  "name": "RealtyCondition",
+  "description": {
+    "en": "Condition of the property.",
+    "cs": "Stav nemovitosti."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "New",
+      "labels": {
+        "en": "New",
+        "cs": "Novostavba"
+      },
+      "description": {
+        "en": "Newly built, not yet used.",
+        "cs": "Nově postavená, dosud neužívaná."
+      }
+    },
+    {
+      "code": "VeryGood",
+      "labels": {
+        "en": "Very good",
+        "cs": "Velmi dobrý"
+      },
+      "description": {
+        "en": "No repairs needed.",
+        "cs": "Nevyžaduje žádné opravy."
+      }
+    },
+    {
+      "code": "Good",
+      "labels": {
+        "en": "Good",
+        "cs": "Dobrý"
+      },
+      "description": {
+        "en": "Minor repairs may be needed.",
+        "cs": "Mohou být potřeba drobné opravy."
+      }
+    },
+    {
+      "code": "AfterRenovation",
+      "labels": {
+        "en": "After renovation",
+        "cs": "Po rekonstrukci"
+      },
+      "description": {
+        "en": "Recently renovated.",
+        "cs": "Nedávno rekonstruovaná."
+      }
+    },
+    {
+      "code": "NeedsRenovation",
+      "labels": {
+        "en": "Needs renovation",
+        "cs": "Před rekonstrukcí"
+      },
+      "description": {
+        "en": "Renovation is required.",
+        "cs": "Vyžaduje rekonstrukci."
+      }
+    },
+    {
+      "code": "UnderConstruction",
+      "labels": {
+        "en": "Under construction",
+        "cs": "Ve výstavbě"
+      },
+      "description": {
+        "en": "Construction not yet completed.",
+        "cs": "Výstavba dosud není dokončena."
+      }
+    }
+  ]
+}

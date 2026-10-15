@@ -1,0 +1,56 @@
+{
+  "name": "LocalIdentifier",
+  "file": "local-identifier",
+  "types": [
+    "erdif:LocalIdentifier"
+  ],
+  "description": {
+    "cs": "Identifikátor z národního registru. Předává se beze změny pro ověření v lokálních registrech.",
+    "en": "Identifier from a national registry. Passed through unchanged for verification in local registries."
+  },
+  "properties": [
+    {
+      "term": "registry",
+      "iri": "erdif:registry",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Název registru (např. `RUIAN`).",
+        "en": "Name of the registry (e.g. `RUIAN`)."
+      }
+    },
+    {
+      "term": "registryCountry",
+      "iri": "erdif:registryCountry",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Země registru podle ISO 3166-1 alpha-2.",
+        "en": "Country of the registry per ISO 3166-1 alpha-2."
+      },
+      "jsonSchema": {
+        "pattern": "^[A-Z]{2}$"
+      }
+    },
+    {
+      "term": "registryLevel",
+      "iri": "erdif:registryLevel",
+      "range": "xsd:string",
+      "required": false,
+      "description": {
+        "cs": "Úroveň identifikovaného objektu v registru (např. `Address`, `Building`, `Parcel`).",
+        "en": "Level of the identified object within the registry (e.g. `Address`, `Building`, `Parcel`)."
+      }
+    },
+    {
+      "term": "identifier",
+      "iri": "schema:identifier",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Identifikátor objektu v registru.",
+        "en": "Identifier of the object in the registry."
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespaces": {
+    "schema": "https://schema.org/",
+    "erdif": "https://erdif-org.github.io/erdif-spec/ns/v1#",
+    "erdif-cl": "https://erdif-org.github.io/erdif-spec/codelist/v1/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  },
+  "context": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld",
+  "schemaBase": "https://erdif-org.github.io/erdif-spec/schema/v1/",
+  "root": "advert",
+  "classes": [
+    "advert",
+    "price",
+    "contact",
+    "realty",
+    "building",
+    "location",
+    "inspire-identifier",
+    "local-identifier",
+    "local-area",
+    "room",
+    "equipment",
+    "utility-network",
+    "parking",
+    "media",
+    "export-information"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "ExportInformation",
+  "file": "export-information",
+  "types": [
+    "erdif:ExportInformation"
+  ],
+  "description": {
+    "cs": "Auditní stopa umožňující párování záznamů při opakovaném importu napříč systémy.",
+    "en": "Audit trail enabling record matching on repeated import across systems."
+  },
+  "properties": [
+    {
+      "term": "sourceSystem",
+      "iri": "erdif:sourceSystem",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Identifikace zdrojového softwaru.",
+        "en": "Identification of the source software."
+      }
+    },
+    {
+      "term": "sourceAdvertId",
+      "iri": "erdif:sourceAdvertId",
+      "range": "xsd:string",
+      "required": true,
+      "description": {
+        "cs": "Identifikátor inzerátu ve zdrojovém systému.",
+        "en": "Advert identifier within the source system."
+      }
+    },
+    {
+      "term": "exportedAt",
+      "iri": "erdif:exportedAt",
+      "range": "xsd:dateTime",
+      "required": true,
+      "description": {
+        "cs": "Časová značka exportu.",
+        "en": "Timestamp of the export."
+      }
+    }
+  ]
+}

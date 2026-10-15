@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/inspire-identifier.schema.json",
+  "title": "InspireIdentifier",
+  "description": "Supranational INSPIRE identifier of a spatial object (address, building or cadastral parcel).",
+  "type": "object",
+  "required": [
+    "@type",
+    "theme",
+    "namespace",
+    "localId"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:InspireIdentifier`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:InspireIdentifier"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:InspireIdentifier"
+          }
+        }
+      ]
+    },
+    "theme": {
+      "description": "INSPIRE theme code: `AD` (addresses), `BU` (buildings), `CP` (cadastral parcels).",
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "AD",
+        "BU",
+        "CP"
+      ]
+    },
+    "namespace": {
+      "description": "Namespace of the data provider (e.g. `CZ.CUZK.AD`).",
+      "type": "string",
+      "minLength": 1
+    },
+    "localId": {
+      "description": "Identifier of the object within the namespace.",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

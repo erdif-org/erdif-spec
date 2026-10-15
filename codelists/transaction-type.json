@@ -1,0 +1,43 @@
+{
+  "name": "TransactionType",
+  "description": {
+    "en": "Type of transaction the offer concerns.",
+    "cs": "Typ transakce, které se nabídka týká."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Sale",
+      "labels": {
+        "en": "Sale",
+        "cs": "Prodej"
+      },
+      "description": {
+        "en": "Transfer of ownership for a price.",
+        "cs": "Převod vlastnictví za úplatu."
+      }
+    },
+    {
+      "code": "Rent",
+      "labels": {
+        "en": "Rent",
+        "cs": "Pronájem"
+      },
+      "description": {
+        "en": "Temporary use for a periodic payment.",
+        "cs": "Dočasné užívání za pravidelnou úplatu."
+      }
+    },
+    {
+      "code": "Auction",
+      "labels": {
+        "en": "Auction",
+        "cs": "Dražba"
+      },
+      "description": {
+        "en": "Sale by public or voluntary auction.",
+        "cs": "Prodej formou veřejné nebo dobrovolné dražby."
+      }
+    }
+  ]
+}

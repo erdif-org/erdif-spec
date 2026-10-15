@@ -1,0 +1,56 @@
+{
+  "name": "Media",
+  "file": "media",
+  "types": [
+    "schema:MediaObject",
+    "erdif:Media"
+  ],
+  "description": {
+    "cs": "Multimediální prvek nabídky včetně pořadí zobrazení.",
+    "en": "A multimedia item of the offer, including display order."
+  },
+  "properties": [
+    {
+      "term": "mediaType",
+      "iri": "erdif:mediaType",
+      "range": "erdif-cl:MediaType",
+      "required": true,
+      "codelist": "MediaType",
+      "description": {
+        "cs": "Druh média.",
+        "en": "Type of media."
+      }
+    },
+    {
+      "term": "contentUrl",
+      "iri": "schema:contentUrl",
+      "range": "xsd:anyURI",
+      "required": true,
+      "description": {
+        "cs": "Adresa média.",
+        "en": "URL of the media item."
+      }
+    },
+    {
+      "term": "position",
+      "iri": "erdif:position",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Pořadí zobrazení.",
+        "en": "Display order."
+      }
+    },
+    {
+      "term": "caption",
+      "iri": "schema:caption",
+      "range": "rdf:langString",
+      "required": false,
+      "languageMap": true,
+      "description": {
+        "cs": "Popisek média v jazykových mutacích.",
+        "en": "Caption of the media item in language variants."
+      }
+    }
+  ]
+}

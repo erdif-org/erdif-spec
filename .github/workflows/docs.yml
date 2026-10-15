@@ -1,0 +1,62 @@
+name: Publish docs
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  # Checks only; the deploy steps below run for branch and tag pushes
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check context against term registry
+        run: python scripts/check_context.py
+
+      - name: Check JSON Schemas are up to date
+        run: python scripts/build_schemas.py --check
+
+      - name: Check RDFS/OWL vocabulary is up to date
+        run: python scripts/build_vocabulary.py --check
+
+      # valid/ must pass; invalid/ must fail with exactly the error in `_expect`
+      - name: Validate examples
+        run: python scripts/validate_examples.py
+
+      # Generators are run by the hook scripts/mkdocs_hooks.py
+      - name: Check documentation build
+        run: mkdocs build --strict
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Push to main -> always overwrites the "dev" version
+      - name: Deploy dev version
+        if: startsWith(github.ref, 'refs/heads/')
+        run: mike deploy --push dev
+
+      # Tag v1.0.0 -> creates version "v1" and sets it as latest
+      - name: Deploy released version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          VERSION="${GITHUB_REF_NAME%%.*}"   # v1.2.3 -> v1
+          mike deploy --push --update-aliases "$VERSION" latest
+          mike set-default --push latest

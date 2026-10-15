@@ -1,0 +1,47 @@
+{
+  "name": "Parking",
+  "file": "parking",
+  "types": [
+    "erdif:Parking"
+  ],
+  "description": {
+    "cs": "Možnost parkování náležející k nemovitosti. Není modelována jako místnost, protože parkování se nezapočítává do dispozice ani užitné plochy jednotky.",
+    "en": "A parking option belonging to the property. Not modelled as a room, because parking does not count towards the layout or usable area of the unit."
+  },
+  "properties": [
+    {
+      "term": "parkingType",
+      "iri": "erdif:parkingType",
+      "range": "erdif-cl:ParkingType",
+      "required": true,
+      "codelist": "ParkingType",
+      "description": {
+        "cs": "Druh parkování.",
+        "en": "Type of parking."
+      }
+    },
+    {
+      "term": "count",
+      "iri": "erdif:count",
+      "range": "xsd:integer",
+      "required": false,
+      "description": {
+        "cs": "Počet stání tohoto druhu. Výchozí hodnota je 1.",
+        "en": "Number of spaces of this type. Defaults to 1."
+      },
+      "jsonSchema": {
+        "minimum": 1
+      }
+    },
+    {
+      "term": "includedInPrice",
+      "iri": "erdif:includedInPrice",
+      "range": "xsd:boolean",
+      "required": false,
+      "description": {
+        "cs": "Příznak, zda je parkování zahrnuto v hlavní ceně.",
+        "en": "Flag indicating whether parking is included in the main price."
+      }
+    }
+  ]
+}

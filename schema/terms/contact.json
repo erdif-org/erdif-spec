@@ -1,0 +1,86 @@
+{
+  "name": "Contact",
+  "file": "contact",
+  "types": [
+    "schema:Person",
+    "schema:Organization",
+    "erdif:Contact"
+  ],
+  "description": {
+    "cs": "Kontaktní subjekt nabídky. Oddělen od dat nemovitosti, aby bylo možné osobní údaje samostatně odstranit nebo anonymizovat.",
+    "en": "Contact entity of the offer. Kept separate from property data so personal data can be removed or anonymised independently."
+  },
+  "properties": [
+    {
+      "term": "contactType",
+      "iri": "erdif:contactType",
+      "range": "erdif-cl:ContactType",
+      "required": true,
+      "codelist": "ContactType",
+      "description": {
+        "cs": "Typ inzerenta (makléř, kancelář, majitel).",
+        "en": "Type of advertiser (agent, office, owner)."
+      }
+    },
+    {
+      "term": "name",
+      "iri": "schema:name",
+      "range": "rdf:langString",
+      "required": true,
+      "languageMap": true,
+      "description": {
+        "cs": "Jméno subjektu.",
+        "en": "Name of the entity."
+      }
+    },
+    {
+      "term": "email",
+      "iri": "schema:email",
+      "range": "xsd:string",
+      "required": false,
+      "description": {
+        "cs": "Kontaktní e-mail.",
+        "en": "Contact e-mail."
+      },
+      "jsonSchema": {
+        "format": "email"
+      }
+    },
+    {
+      "term": "telephone",
+      "iri": "schema:telephone",
+      "range": "xsd:string",
+      "required": false,
+      "description": {
+        "cs": "Kontaktní telefon v mezinárodním formátu.",
+        "en": "Contact phone in international format."
+      },
+      "jsonSchema": {
+        "pattern": "^\\+[1-9][0-9]{6,14}$"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "contact-reachable",
+      "description": {
+        "cs": "Musí být uveden alespoň jeden z údajů `email` a `telephone`.",
+        "en": "At least one of `email` and `telephone` must be present."
+      },
+      "jsonSchema": {
+        "anyOf": [
+          {
+            "required": [
+              "email"
+            ]
+          },
+          {
+            "required": [
+              "telephone"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

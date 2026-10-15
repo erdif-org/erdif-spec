@@ -1,0 +1,65 @@
+{
+  "name": "EquipmentType",
+  "description": {
+    "en": "Category of equipment.",
+    "cs": "Kategorie vybavení."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Furniture",
+      "labels": {
+        "en": "Furniture",
+        "cs": "Nábytek"
+      },
+      "description": {
+        "en": "Movable or built-in furniture.",
+        "cs": "Volně stojící nebo vestavěný nábytek."
+      }
+    },
+    {
+      "code": "Appliance",
+      "labels": {
+        "en": "Appliance",
+        "cs": "Spotřebič"
+      },
+      "description": {
+        "en": "Household appliance.",
+        "cs": "Domácí spotřebič."
+      }
+    },
+    {
+      "code": "SanitaryFixture",
+      "labels": {
+        "en": "Sanitary fixture",
+        "cs": "Sanitární vybavení"
+      },
+      "description": {
+        "en": "Bath, shower, washbasin, toilet and similar.",
+        "cs": "Vana, sprcha, umyvadlo, WC a podobně."
+      }
+    },
+    {
+      "code": "HeatingElement",
+      "labels": {
+        "en": "Heating element",
+        "cs": "Topné těleso"
+      },
+      "description": {
+        "en": "Radiator, stove, underfloor heating and similar.",
+        "cs": "Radiátor, kamna, podlahové topení a podobně."
+      }
+    },
+    {
+      "code": "CoolingElement",
+      "labels": {
+        "en": "Cooling element",
+        "cs": "Chladící těleso"
+      },
+      "description": {
+        "en": "Air conditioning unit and similar.",
+        "cs": "Klimatizace a podobně."
+      }
+    }
+  ]
+}
