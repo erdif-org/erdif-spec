@@ -1,0 +1,3501 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="European Real Estate Data Interchange Format">
+      
+      
+      
+        <link rel="canonical" href="https://erdif-org.github.io/erdif-spec/dev/vocabulary/">
+      
+      
+        <link rel="prev" href="../model/export-information/">
+      
+      
+        <link rel="next" href="../codelists/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>erdif vocabulary - ERDIF Specification</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#erdif-vocabulary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ERDIF Specification" class="md-header__button md-logo" aria-label="ERDIF Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ERDIF Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              erdif vocabulary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/erdif-org/erdif-spec" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ERDIF Specification" class="md-nav__button md-logo" aria-label="ERDIF Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ERDIF Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/erdif-org/erdif-spec" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Namespaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data model
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data model
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/advert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/price/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Price
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/realty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Realty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Location
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/inspire-identifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InspireIdentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/local-identifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LocalIdentifier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/local-area/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LocalArea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/room/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/utility-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UtilityNetwork
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/parking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/export-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ExportInformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    erdif vocabulary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    erdif vocabulary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-advert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-realty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-inspire-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InspireIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-local-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LocalIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-local-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LocalArea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-utility-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UtilityNetwork
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-export-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExportInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prop-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-amenity-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        amenityType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-approximate-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        approximateCoordinates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-construction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        constructionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-contact-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contactType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        distance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-elevator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        elevator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-energy-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energyClass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-equipment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        equipmentType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-export-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exportInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-exported-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exportedAt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floor-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floors-above-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorsAboveGround
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floors-underground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorsUnderground
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-format-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        formatVersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-global-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-included-in-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        includedInPrice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-local-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireLocalId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireTheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-last-renovation-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lastRenovationYear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-local-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localArea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-local-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        media
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-media-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mediaType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-negotiable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        negotiable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-ownership-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ownershipType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-parking-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parkingType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-plot-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plotSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price-on-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        priceOnRequest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        priceType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-realty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-realty-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realtyType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry-country" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registryCountry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registryLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-room-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        roomType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-source-advert-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sourceAdvertId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-source-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sourceSystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        transactionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-utility-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utilityNetwork
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codelists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codelists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/transaction-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TransactionType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/realty-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RealtyType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/ownership-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OwnershipType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/room-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RoomType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/utility-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UtilityNetwork
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/utility-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UtilityConnection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/energy-class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EnergyClass
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/price-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PriceType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/contact-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ContactType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/media-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MediaType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/equipment-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EquipmentType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/amenity-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AmenityType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/realty-condition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RealtyCondition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/construction-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ConstructionType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/parking-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ParkingType
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codelists/accessibility-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AccessibilityFeature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geolocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geolocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-advert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-realty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-inspire-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InspireIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-local-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LocalIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-local-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LocalArea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-utility-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UtilityNetwork
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-export-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExportInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prop-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-amenity-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        amenityType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-approximate-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        approximateCoordinates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-construction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        constructionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-contact-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contactType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        distance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-elevator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        elevator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-energy-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energyClass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-equipment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        equipmentType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-export-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exportInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-exported-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exportedAt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floor-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floors-above-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorsAboveGround
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-floors-underground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floorsUnderground
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-format-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        formatVersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-global-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-included-in-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        includedInPrice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-local-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireLocalId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireNamespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-inspire-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspireTheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-last-renovation-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lastRenovationYear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-local-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localArea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-local-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localIdentifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        media
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-media-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mediaType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-negotiable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        negotiable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-ownership-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ownershipType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-parking-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parkingType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-plot-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plotSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price-on-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        priceOnRequest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-price-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        priceType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-realty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-realty-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realtyType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry-country" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registryCountry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-registry-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registryLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        room
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-room-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        roomType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-source-advert-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sourceAdvertId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-source-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sourceSystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        transactionType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prop-utility-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utilityNetwork
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="erdif-vocabulary">erdif: vocabulary<a class="headerlink" href="#erdif-vocabulary" title="Permanent link">&para;</a></h1>
+<p>This page is the reference of the ERDIF namespace.
+Terms reused from schema.org are not listed here — see their
+definitions directly at <a href="https://schema.org/">schema.org</a>.</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<h3 id="class-advert">Advert<a class="headerlink" href="#class-advert" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Advert</code></p>
+<p>Root entity of the format. Represents a single real estate offer.</p>
+<h3 id="class-price">Price<a class="headerlink" href="#class-price" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Price</code></p>
+<p>A single price item of the offer. An offer may carry several of different types.</p>
+<h3 id="class-contact">Contact<a class="headerlink" href="#class-contact" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Contact</code></p>
+<p>Contact entity of the offer. Kept separate from property data so personal data can be removed or anonymised independently.</p>
+<h3 id="class-realty">Realty<a class="headerlink" href="#class-realty" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Realty</code></p>
+<p>The physical property. Kept separate from the commercial part because its description is independent of how it is currently advertised.</p>
+<h3 id="class-building">Building<a class="headerlink" href="#class-building" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Building</code></p>
+<p>The building the property belongs to. Its attributes are shared by all units in the building, so they are kept apart from the unit itself.</p>
+<h3 id="class-location">Location<a class="headerlink" href="#class-location" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Location</code></p>
+<p>Location of the property combining three independent means of identification.</p>
+<h3 id="class-inspire-identifier">InspireIdentifier<a class="headerlink" href="#class-inspire-identifier" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#InspireIdentifier</code></p>
+<p>Supranational INSPIRE identifier of a spatial object (address, building or cadastral parcel).</p>
+<h3 id="class-local-identifier">LocalIdentifier<a class="headerlink" href="#class-local-identifier" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#LocalIdentifier</code></p>
+<p>Identifier from a national registry. Passed through unchanged for verification in local registries.</p>
+<h3 id="class-local-area">LocalArea<a class="headerlink" href="#class-local-area" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#LocalArea</code></p>
+<p>An amenity in the surroundings of the property. Kept separate from <code>Location</code>, because it is descriptive information, not spatial identification.</p>
+<h3 id="class-room">Room<a class="headerlink" href="#class-room" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Room</code></p>
+<p>A room of the property. Layout and total usable area can be derived from rooms.</p>
+<h3 id="class-equipment">Equipment<a class="headerlink" href="#class-equipment" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Equipment</code></p>
+<p>An item of equipment bound to a specific room.</p>
+<h3 id="class-utility-network">UtilityNetwork<a class="headerlink" href="#class-utility-network" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#UtilityNetwork</code></p>
+<p>Connection of the property to a utility network. Network and connection are two independent axes, hence two codelists.</p>
+<h3 id="class-parking">Parking<a class="headerlink" href="#class-parking" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Parking</code></p>
+<p>A parking option belonging to the property. Not modelled as a room, because parking does not count towards the layout or usable area of the unit.</p>
+<h3 id="class-media">Media<a class="headerlink" href="#class-media" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#Media</code></p>
+<p>A multimedia item of the offer, including display order.</p>
+<h3 id="class-export-information">ExportInformation<a class="headerlink" href="#class-export-information" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#ExportInformation</code></p>
+<p>Audit trail enabling record matching on repeated import across systems.</p>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<h3 id="prop-accessibility">accessibility<a class="headerlink" href="#prop-accessibility" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#accessibility</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif-cl:AccessibilityFeature</code>.</p>
+<p>Accessibility features of the property as a whole (entrance, access).</p>
+<h3 id="prop-amenity-type">amenityType<a class="headerlink" href="#prop-amenity-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#amenityType</code></p>
+<p>Domain: <code>LocalArea</code>. Range: <code>erdif-cl:AmenityType</code>.</p>
+<p>Type of amenity.</p>
+<h3 id="prop-approximate-coordinates">approximateCoordinates<a class="headerlink" href="#prop-approximate-coordinates" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#approximateCoordinates</code></p>
+<p>Domain: <code>Location</code>. Range: <code>xsd:boolean</code>.</p>
+<p>Flag indicating whether coordinates are approximate.</p>
+<h3 id="prop-building">building<a class="headerlink" href="#prop-building" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#building</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:Building</code>.</p>
+<p>Building the property is part of or consists of. Omitted for land.</p>
+<h3 id="prop-condition">condition<a class="headerlink" href="#prop-condition" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#condition</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif-cl:RealtyCondition</code>.</p>
+<p>Condition of the property itself; may differ from the condition of the building.</p>
+<h3 id="prop-connection">connection<a class="headerlink" href="#prop-connection" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#connection</code></p>
+<p>Domain: <code>UtilityNetwork</code>. Range: <code>erdif-cl:UtilityConnection</code>.</p>
+<p>Means of connection to the given network.</p>
+<h3 id="prop-construction-type">constructionType<a class="headerlink" href="#prop-construction-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#constructionType</code></p>
+<p>Domain: <code>Building</code>. Range: <code>erdif-cl:ConstructionType</code>.</p>
+<p>Main load-bearing construction of the building.</p>
+<h3 id="prop-contact">contact<a class="headerlink" href="#prop-contact" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#contact</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif:Contact</code>.</p>
+<p>Contact entity managing the offer.</p>
+<h3 id="prop-contact-type">contactType<a class="headerlink" href="#prop-contact-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#contactType</code></p>
+<p>Domain: <code>Contact</code>. Range: <code>erdif-cl:ContactType</code>.</p>
+<p>Type of advertiser (agent, office, owner).</p>
+<h3 id="prop-count">count<a class="headerlink" href="#prop-count" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#count</code></p>
+<p>Domain: <code>Parking</code>. Range: <code>xsd:integer</code>.</p>
+<p>Number of spaces of this type. Defaults to 1.</p>
+<h3 id="prop-distance">distance<a class="headerlink" href="#prop-distance" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#distance</code></p>
+<p>Domain: <code>LocalArea</code>. Range: <code>schema:QuantitativeValue</code>.</p>
+<p>Distance from the property in metres (<code>MTR</code>).</p>
+<h3 id="prop-elevator">elevator<a class="headerlink" href="#prop-elevator" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#elevator</code></p>
+<p>Domain: <code>Building</code>. Range: <code>xsd:boolean</code>.</p>
+<p>Flag indicating whether the building has an elevator.</p>
+<h3 id="prop-energy-class">energyClass<a class="headerlink" href="#prop-energy-class" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#energyClass</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif-cl:EnergyClass</code>.</p>
+<p>Energy class per the EPBD directive.</p>
+<h3 id="prop-equipment">equipment<a class="headerlink" href="#prop-equipment" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#equipment</code></p>
+<p>Domain: <code>Room</code>. Range: <code>erdif:Equipment</code>.</p>
+<p>Room equipment. Bound to the room, not the whole property.</p>
+<h3 id="prop-equipment-type">equipmentType<a class="headerlink" href="#prop-equipment-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#equipmentType</code></p>
+<p>Domain: <code>Equipment</code>. Range: <code>erdif-cl:EquipmentType</code>.</p>
+<p>Category of equipment.</p>
+<h3 id="prop-export-information">exportInformation<a class="headerlink" href="#prop-export-information" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#exportInformation</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif:ExportInformation</code>.</p>
+<p>Export audit trail.</p>
+<h3 id="prop-exported-at">exportedAt<a class="headerlink" href="#prop-exported-at" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#exportedAt</code></p>
+<p>Domain: <code>ExportInformation</code>. Range: <code>xsd:dateTime</code>.</p>
+<p>Timestamp of the export.</p>
+<h3 id="prop-floor-level">floorLevel<a class="headerlink" href="#prop-floor-level" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#floorLevel</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>xsd:integer</code>.</p>
+<p>Floor on which the unit is located (0 = ground floor, negative = underground).</p>
+<h3 id="prop-floors-above-ground">floorsAboveGround<a class="headerlink" href="#prop-floors-above-ground" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#floorsAboveGround</code></p>
+<p>Domain: <code>Building</code>. Range: <code>xsd:integer</code>.</p>
+<p>Number of above-ground floors including the ground floor.</p>
+<h3 id="prop-floors-underground">floorsUnderground<a class="headerlink" href="#prop-floors-underground" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#floorsUnderground</code></p>
+<p>Domain: <code>Building</code>. Range: <code>xsd:integer</code>.</p>
+<p>Number of underground floors.</p>
+<h3 id="prop-format-version">formatVersion<a class="headerlink" href="#prop-format-version" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#formatVersion</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>xsd:string</code>.</p>
+<p>Version of the ERDIF format the document was created against.</p>
+<h3 id="prop-global-identifier">globalIdentifier<a class="headerlink" href="#prop-global-identifier" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#globalIdentifier</code></p>
+<p>Domain: <code>Location</code>. Range: <code>erdif:InspireIdentifier</code>.</p>
+<p>Supranational INSPIRE spatial identifier.</p>
+<h3 id="prop-included-in-price">includedInPrice<a class="headerlink" href="#prop-included-in-price" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#includedInPrice</code></p>
+<p>Domain: <code>Parking</code>. Range: <code>xsd:boolean</code>.</p>
+<p>Flag indicating whether parking is included in the main price.</p>
+<h3 id="prop-inspire-local-id">inspireLocalId<a class="headerlink" href="#prop-inspire-local-id" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#inspireLocalId</code></p>
+<p>Domain: <code>InspireIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>Identifier of the object within the namespace.</p>
+<h3 id="prop-inspire-namespace">inspireNamespace<a class="headerlink" href="#prop-inspire-namespace" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#inspireNamespace</code></p>
+<p>Domain: <code>InspireIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>Namespace of the data provider (e.g. <code>CZ.CUZK.AD</code>).</p>
+<h3 id="prop-inspire-theme">inspireTheme<a class="headerlink" href="#prop-inspire-theme" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#inspireTheme</code></p>
+<p>Domain: <code>InspireIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>INSPIRE theme code: <code>AD</code> (addresses), <code>BU</code> (buildings), <code>CP</code> (cadastral parcels).</p>
+<h3 id="prop-last-renovation-year">lastRenovationYear<a class="headerlink" href="#prop-last-renovation-year" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#lastRenovationYear</code></p>
+<p>Domain: <code>Building</code>. Range: <code>xsd:integer</code>.</p>
+<p>Year of the last major renovation of the building.</p>
+<h3 id="prop-local-area">localArea<a class="headerlink" href="#prop-local-area" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#localArea</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:LocalArea</code>.</p>
+<p>Amenities in the surroundings of the property (transport, schools, parks, ...).</p>
+<h3 id="prop-local-identifier">localIdentifier<a class="headerlink" href="#prop-local-identifier" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#localIdentifier</code></p>
+<p>Domain: <code>Location</code>. Range: <code>erdif:LocalIdentifier</code>.</p>
+<p>National registry identifiers (e.g. RUIAN).</p>
+<h3 id="prop-location">location<a class="headerlink" href="#prop-location" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#location</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:Location</code>.</p>
+<p>Location of the property.</p>
+<h3 id="prop-media">media<a class="headerlink" href="#prop-media" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#media</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif:Media</code>.</p>
+<p>Photos, videos, floor plans and virtual tours.</p>
+<h3 id="prop-media-type">mediaType<a class="headerlink" href="#prop-media-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#mediaType</code></p>
+<p>Domain: <code>Media</code>. Range: <code>erdif-cl:MediaType</code>.</p>
+<p>Type of media.</p>
+<h3 id="prop-negotiable">negotiable<a class="headerlink" href="#prop-negotiable" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#negotiable</code></p>
+<p>Domain: <code>Price</code>. Range: <code>xsd:boolean</code>.</p>
+<p>Flag indicating whether the price is negotiable.</p>
+<h3 id="prop-network">network<a class="headerlink" href="#prop-network" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#network</code></p>
+<p>Domain: <code>UtilityNetwork</code>. Range: <code>erdif-cl:UtilityNetwork</code>.</p>
+<p>Type of utility network.</p>
+<h3 id="prop-ownership-type">ownershipType<a class="headerlink" href="#prop-ownership-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#ownershipType</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif-cl:OwnershipType</code>.</p>
+<p>Form of ownership.</p>
+<h3 id="prop-parking">parking<a class="headerlink" href="#prop-parking" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#parking</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:Parking</code>.</p>
+<p>Parking options belonging to the property.</p>
+<h3 id="prop-parking-type">parkingType<a class="headerlink" href="#prop-parking-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#parkingType</code></p>
+<p>Domain: <code>Parking</code>. Range: <code>erdif-cl:ParkingType</code>.</p>
+<p>Type of parking.</p>
+<h3 id="prop-plot-size">plotSize<a class="headerlink" href="#prop-plot-size" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#plotSize</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>schema:QuantitativeValue</code>.</p>
+<p>Area of the land plot in square metres (<code>MTK</code>).</p>
+<h3 id="prop-position">position<a class="headerlink" href="#prop-position" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#position</code></p>
+<p>Domain: <code>Media</code>. Range: <code>xsd:integer</code>.</p>
+<p>Display order.</p>
+<h3 id="prop-price">price<a class="headerlink" href="#prop-price" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#price</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif:Price</code>.</p>
+<p>Price items of the offer.</p>
+<h3 id="prop-price-on-request">priceOnRequest<a class="headerlink" href="#prop-price-on-request" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#priceOnRequest</code></p>
+<p>Domain: <code>Price</code>. Range: <code>xsd:boolean</code>.</p>
+<p>Flag indicating that the price is available on request only.</p>
+<h3 id="prop-price-type">priceType<a class="headerlink" href="#prop-price-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#priceType</code></p>
+<p>Domain: <code>Price</code>. Range: <code>erdif-cl:PriceType</code>.</p>
+<p>Type of the price item.</p>
+<h3 id="prop-realty">realty<a class="headerlink" href="#prop-realty" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#realty</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif:Realty</code>.</p>
+<p>Physical property the offer concerns.</p>
+<h3 id="prop-realty-type">realtyType<a class="headerlink" href="#prop-realty-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#realtyType</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif-cl:RealtyType</code>.</p>
+<p>Type of real estate.</p>
+<h3 id="prop-registry">registry<a class="headerlink" href="#prop-registry" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#registry</code></p>
+<p>Domain: <code>LocalIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>Name of the registry (e.g. <code>RUIAN</code>).</p>
+<h3 id="prop-registry-country">registryCountry<a class="headerlink" href="#prop-registry-country" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#registryCountry</code></p>
+<p>Domain: <code>LocalIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>Country of the registry per ISO 3166-1 alpha-2.</p>
+<h3 id="prop-registry-level">registryLevel<a class="headerlink" href="#prop-registry-level" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#registryLevel</code></p>
+<p>Domain: <code>LocalIdentifier</code>. Range: <code>xsd:string</code>.</p>
+<p>Level of the identified object within the registry (e.g. <code>Address</code>, <code>Building</code>, <code>Parcel</code>).</p>
+<h3 id="prop-room">room<a class="headerlink" href="#prop-room" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#room</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:Room</code>.</p>
+<p>Breakdown into rooms. Land parcels have none.</p>
+<h3 id="prop-room-type">roomType<a class="headerlink" href="#prop-room-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#roomType</code></p>
+<p>Domain: <code>Room</code>. Range: <code>erdif-cl:RoomType</code>.</p>
+<p>Type of room.</p>
+<h3 id="prop-source-advert-id">sourceAdvertId<a class="headerlink" href="#prop-source-advert-id" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#sourceAdvertId</code></p>
+<p>Domain: <code>ExportInformation</code>. Range: <code>xsd:string</code>.</p>
+<p>Advert identifier within the source system.</p>
+<h3 id="prop-source-system">sourceSystem<a class="headerlink" href="#prop-source-system" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#sourceSystem</code></p>
+<p>Domain: <code>ExportInformation</code>. Range: <code>xsd:string</code>.</p>
+<p>Identification of the source software.</p>
+<h3 id="prop-transaction-type">transactionType<a class="headerlink" href="#prop-transaction-type" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#transactionType</code></p>
+<p>Domain: <code>Advert</code>. Range: <code>erdif-cl:TransactionType</code>.</p>
+<p>Type of transaction the offer concerns.</p>
+<h3 id="prop-utility-network">utilityNetwork<a class="headerlink" href="#prop-utility-network" title="Permanent link">&para;</a></h3>
+<p><code>https://erdif-org.github.io/erdif-spec/ns/v1#utilityNetwork</code></p>
+<p>Domain: <code>Realty</code>. Range: <code>erdif:UtilityNetwork</code>.</p>
+<p>Utility network connections.</p>
+<hr />
+<p><em>Generated from <code>schema/terms/</code>. Do not edit by hand.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
