@@ -1,0 +1,65 @@
+{
+  "name": "MediaType",
+  "description": {
+    "en": "Type of media item.",
+    "cs": "Druh média."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "OutsidePhoto",
+      "labels": {
+        "en": "Outside photo",
+        "cs": "Fotografie exteriéru"
+      },
+      "description": {
+        "en": "Still image of the property.",
+        "cs": "Statický snímek nemovitosti."
+      }
+    },
+    {
+      "code": "InsidePhoto",
+      "labels": {
+        "en": "Inside photo",
+        "cs": "Fotografie interiéru"
+      },
+      "description": {
+        "en": "Still image of the interior.",
+        "cs": "Statický snímek interiéru."
+      }
+    },
+    {
+      "code": "Video",
+      "labels": {
+        "en": "Video",
+        "cs": "Video"
+      },
+      "description": {
+        "en": "Video recording.",
+        "cs": "Videozáznam."
+      }
+    },
+    {
+      "code": "FloorPlan",
+      "labels": {
+        "en": "Floor plan",
+        "cs": "Půdorys"
+      },
+      "description": {
+        "en": "Floor plan drawing.",
+        "cs": "Výkres půdorysu."
+      }
+    },
+    {
+      "code": "VirtualTour",
+      "labels": {
+        "en": "Virtual tour",
+        "cs": "Virtuální prohlídka"
+      },
+      "description": {
+        "en": "Interactive 3D or 360° tour.",
+        "cs": "Interaktivní 3D nebo 360° prohlídka."
+      }
+    }
+  ]
+}

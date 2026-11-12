@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/local-identifier.schema.json",
+  "title": "LocalIdentifier",
+  "description": "Identifier from a national registry. Passed through unchanged for verification in local registries.",
+  "type": "object",
+  "required": [
+    "@type",
+    "registry",
+    "registryCountry",
+    "identifier"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:LocalIdentifier`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:LocalIdentifier"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:LocalIdentifier"
+          }
+        }
+      ]
+    },
+    "registry": {
+      "description": "Name of the registry (e.g. `RUIAN`).",
+      "type": "string",
+      "minLength": 1
+    },
+    "registryCountry": {
+      "description": "Country of the registry per ISO 3166-1 alpha-2.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z]{2}$"
+    },
+    "registryLevel": {
+      "description": "Level of the identified object within the registry (e.g. `Address`, `Building`, `Parcel`).",
+      "type": "string",
+      "minLength": 1
+    },
+    "identifier": {
+      "description": "Identifier of the object in the registry.",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "OwnershipType",
+  "description": {
+    "en": "Form of ownership of the property.",
+    "cs": "Forma vlastnictví nemovitosti."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Personal",
+      "labels": {
+        "en": "Personal",
+        "cs": "Osobní"
+      },
+      "description": {
+        "en": "Owned by a natural or legal person.",
+        "cs": "Ve vlastnictví fyzické nebo právnické osoby."
+      }
+    },
+    {
+      "code": "Cooperative",
+      "labels": {
+        "en": "Cooperative",
+        "cs": "Družstevní"
+      },
+      "description": {
+        "en": "Owned by a housing cooperative; the member holds a share.",
+        "cs": "Ve vlastnictví bytového družstva; člen drží podíl."
+      }
+    },
+    {
+      "code": "Municipal",
+      "labels": {
+        "en": "Municipal",
+        "cs": "Obecní"
+      },
+      "description": {
+        "en": "Owned by a municipality or city.",
+        "cs": "Ve vlastnictví obce nebo města."
+      }
+    },
+    {
+      "code": "State",
+      "labels": {
+        "en": "State",
+        "cs": "Státní"
+      },
+      "description": {
+        "en": "Owned by the state.",
+        "cs": "Ve vlastnictví státu."
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/room.schema.json",
+  "title": "Room",
+  "description": "A room of the property. Layout and total usable area can be derived from rooms.",
+  "type": "object",
+  "required": [
+    "@type",
+    "roomType"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Room`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Room"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Room"
+          }
+        }
+      ]
+    },
+    "roomType": {
+      "description": "Type of room.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "LivingRoom",
+        "Bedroom",
+        "LivingKitchen",
+        "SeparateKitchen",
+        "Bathroom",
+        "Toilet"
+      ]
+    },
+    "floorSize": {
+      "description": "Room area in square metres.",
+      "$ref": "common.schema.json#/$defs/QuantitativeValue",
+      "properties": {
+        "unitCode": {
+          "const": "MTK"
+        }
+      }
+    },
+    "floorLevel": {
+      "description": "Floor the room is located on.",
+      "type": "integer"
+    },
+    "accessibility": {
+      "description": "Accessibility features of the room.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "examples": [
+          "BarrierFree",
+          "StepFreeEntrance",
+          "ElevatorAccess",
+          "StairLift",
+          "WideDoorways",
+          "ThresholdFree",
+          "WheelchairTurningSpace",
+          "WalkInShower",
+          "GrabBars"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "equipment": {
+      "description": "Room equipment. Bound to the room, not the whole property.",
+      "type": "array",
+      "items": {
+        "$ref": "equipment.schema.json"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "accessibility-level",
+      "properties": {
+        "accessibility": {
+          "items": {
+            "not": {
+              "enum": [
+                "StepFreeEntrance",
+                "ElevatorAccess",
+                "StairLift"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

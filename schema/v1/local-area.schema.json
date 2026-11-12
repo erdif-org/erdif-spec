@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/local-area.schema.json",
+  "title": "LocalArea",
+  "description": "An amenity in the surroundings of the property. Kept separate from `Location`, because it is descriptive information, not spatial identification.",
+  "type": "object",
+  "required": [
+    "@type",
+    "amenityType"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:LocalArea`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:LocalArea"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:LocalArea"
+          }
+        }
+      ]
+    },
+    "amenityType": {
+      "description": "Type of amenity.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "BusStop",
+        "TramStop",
+        "MetroStation",
+        "TrainStation",
+        "ParkingLot",
+        "Kindergarten",
+        "School",
+        "University",
+        "Shop",
+        "Supermarket",
+        "PostOffice",
+        "Bank",
+        "Restaurant",
+        "Doctor",
+        "Hospital",
+        "Pharmacy",
+        "Park",
+        "Playground",
+        "SportsFacility"
+      ]
+    },
+    "name": {
+      "description": "Name of the amenity.",
+      "$ref": "common.schema.json#/$defs/languageMap"
+    },
+    "distance": {
+      "description": "Distance from the property in metres (`MTR`).",
+      "$ref": "common.schema.json#/$defs/QuantitativeValue",
+      "properties": {
+        "unitCode": {
+          "const": "MTR"
+        }
+      }
+    }
+  }
+}

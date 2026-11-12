@@ -1,0 +1,76 @@
+{
+  "name": "RoomType",
+  "description": {
+    "en": "Type of room.",
+    "cs": "Druh místnosti."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "LivingRoom",
+      "labels": {
+        "en": "Living room",
+        "cs": "Obývací pokoj"
+      },
+      "description": {
+        "en": "Main living space without a kitchen.",
+        "cs": "Hlavní obytná místnost bez kuchyně."
+      }
+    },
+    {
+      "code": "Bedroom",
+      "labels": {
+        "en": "Bedroom",
+        "cs": "Ložnice"
+      },
+      "description": {
+        "en": "Room intended for sleeping.",
+        "cs": "Místnost určená ke spaní."
+      }
+    },
+    {
+      "code": "LivingKitchen",
+      "labels": {
+        "en": "Living room with kitchen",
+        "cs": "Obytná místnost s kuchyní"
+      },
+      "description": {
+        "en": "Living space combined with a kitchen.",
+        "cs": "Obytná místnost spojená s kuchyní."
+      }
+    },
+    {
+      "code": "SeparateKitchen",
+      "labels": {
+        "en": "Separate kitchen",
+        "cs": "Samostatná kuchyně"
+      },
+      "description": {
+        "en": "Kitchen as a separate room.",
+        "cs": "Kuchyně jako samostatná místnost."
+      }
+    },
+    {
+      "code": "Bathroom",
+      "labels": {
+        "en": "Bathroom",
+        "cs": "Koupelna"
+      },
+      "description": {
+        "en": "Room with a bath or shower.",
+        "cs": "Místnost s vanou nebo sprchou."
+      }
+    },
+    {
+      "code": "Toilet",
+      "labels": {
+        "en": "Toilet",
+        "cs": "Samostatné WC"
+      },
+      "description": {
+        "en": "Separate toilet room.",
+        "cs": "Samostatná místnost se záchodem."
+      }
+    }
+  ]
+}

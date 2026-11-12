@@ -1,0 +1,76 @@
+{
+  "name": "ConstructionType",
+  "description": {
+    "en": "Main load-bearing construction of a building.",
+    "cs": "Hlavní nosná konstrukce budovy."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Brick",
+      "labels": {
+        "en": "Brick",
+        "cs": "Cihlová"
+      },
+      "description": {
+        "en": "Masonry of bricks or blocks.",
+        "cs": "Zděná z cihel nebo tvárnic."
+      }
+    },
+    {
+      "code": "Panel",
+      "labels": {
+        "en": "Prefabricated panel",
+        "cs": "Panelová"
+      },
+      "description": {
+        "en": "Prefabricated concrete panels.",
+        "cs": "Z prefabrikovaných betonových panelů."
+      }
+    },
+    {
+      "code": "Skeleton",
+      "labels": {
+        "en": "Skeleton",
+        "cs": "Skeletová"
+      },
+      "description": {
+        "en": "Reinforced concrete or steel frame.",
+        "cs": "Železobetonový nebo ocelový skelet."
+      }
+    },
+    {
+      "code": "Wood",
+      "labels": {
+        "en": "Wood",
+        "cs": "Dřevostavba"
+      },
+      "description": {
+        "en": "Timber frame or log construction.",
+        "cs": "Dřevěná rámová nebo roubená konstrukce."
+      }
+    },
+    {
+      "code": "Stone",
+      "labels": {
+        "en": "Stone",
+        "cs": "Kamenná"
+      },
+      "description": {
+        "en": "Stone masonry.",
+        "cs": "Kamenné zdivo."
+      }
+    },
+    {
+      "code": "Mixed",
+      "labels": {
+        "en": "Mixed",
+        "cs": "Smíšená"
+      },
+      "description": {
+        "en": "Combination of several construction types.",
+        "cs": "Kombinace více druhů konstrukce."
+      }
+    }
+  ]
+}

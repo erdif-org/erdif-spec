@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/equipment.schema.json",
+  "title": "Equipment",
+  "description": "An item of equipment bound to a specific room.",
+  "type": "object",
+  "required": [
+    "@type",
+    "equipmentType"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Equipment`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Equipment"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Equipment"
+          }
+        }
+      ]
+    },
+    "equipmentType": {
+      "description": "Category of equipment.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Furniture",
+        "Appliance",
+        "SanitaryFixture",
+        "HeatingElement",
+        "CoolingElement"
+      ]
+    },
+    "name": {
+      "description": "Label of the equipment item.",
+      "$ref": "common.schema.json#/$defs/languageMap"
+    }
+  }
+}

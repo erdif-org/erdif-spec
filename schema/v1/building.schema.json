@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/building.schema.json",
+  "title": "Building",
+  "description": "The building the property belongs to. Its attributes are shared by all units in the building, so they are kept apart from the unit itself.",
+  "type": "object",
+  "required": [
+    "@type"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Building`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Building"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Building"
+          }
+        }
+      ]
+    },
+    "constructionType": {
+      "description": "Main load-bearing construction of the building.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Brick",
+        "Panel",
+        "Skeleton",
+        "Wood",
+        "Stone",
+        "Mixed"
+      ]
+    },
+    "yearBuilt": {
+      "description": "Year the building was completed.",
+      "type": "integer"
+    },
+    "lastRenovationYear": {
+      "description": "Year of the last major renovation of the building.",
+      "type": "integer"
+    },
+    "floorsAboveGround": {
+      "description": "Number of above-ground floors including the ground floor.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "floorsUnderground": {
+      "description": "Number of underground floors.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "elevator": {
+      "description": "Flag indicating whether the building has an elevator.",
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "@vocab": "https://schema.org/",
+
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "erdif": "https://erdif-org.github.io/erdif-spec/ns/v1#",
+    "erdif-cl": "https://erdif-org.github.io/erdif-spec/codelist/v1/",
+
+    "formatVersion": { "@id": "erdif:formatVersion" },
+    "identifier": { "@id": "schema:identifier" },
+    "datePosted": { "@id": "schema:datePosted", "@type": "xsd:dateTime" },
+
+    "transactionType": {
+      "@id": "erdif:transactionType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:TransactionType#" }
+    },
+    "realtyType": {
+      "@id": "erdif:realtyType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:RealtyType#" }
+    },
+    "ownershipType": {
+      "@id": "erdif:ownershipType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:OwnershipType#" }
+    },
+    "roomType": {
+      "@id": "erdif:roomType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:RoomType#" }
+    },
+    "energyClass": {
+      "@id": "erdif:energyClass",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:EnergyClass#" }
+    },
+    "condition": {
+      "@id": "erdif:condition",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:RealtyCondition#" }
+    },
+    "constructionType": {
+      "@id": "erdif:constructionType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:ConstructionType#" }
+    },
+    "parkingType": {
+      "@id": "erdif:parkingType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:ParkingType#" }
+    },
+    "accessibility": {
+      "@id": "erdif:accessibility",
+      "@type": "@vocab",
+      "@container": "@set",
+      "@context": { "@vocab": "erdif-cl:AccessibilityFeature#" }
+    },
+    "amenityType": {
+      "@id": "erdif:amenityType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:AmenityType#" }
+    },
+    "network": {
+      "@id": "erdif:network",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:UtilityNetwork#" }
+    },
+    "connection": {
+      "@id": "erdif:connection",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:UtilityConnection#" }
+    },
+    "priceType": {
+      "@id": "erdif:priceType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:PriceType#" }
+    },
+    "contactType": {
+      "@id": "erdif:contactType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:ContactType#" }
+    },
+    "mediaType": {
+      "@id": "erdif:mediaType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:MediaType#" }
+    },
+    "equipmentType": {
+      "@id": "erdif:equipmentType",
+      "@type": "@vocab",
+      "@context": { "@vocab": "erdif-cl:EquipmentType#" }
+    },
+
+    "description": { "@id": "schema:description", "@container": "@language" },
+    "name": { "@id": "schema:name", "@container": "@language" },
+    "caption": { "@id": "schema:caption", "@container": "@language" },
+
+    "contact": { "@id": "erdif:contact" },
+    "realty": { "@id": "erdif:realty" },
+    "building": { "@id": "erdif:building" },
+    "location": { "@id": "erdif:location" },
+    "globalIdentifier": { "@id": "erdif:globalIdentifier" },
+    "exportInformation": { "@id": "erdif:exportInformation" },
+    "prices": { "@id": "erdif:price", "@container": "@set" },
+    "media": { "@id": "erdif:media", "@container": "@set" },
+    "rooms": { "@id": "erdif:room", "@container": "@set" },
+    "equipment": { "@id": "erdif:equipment", "@container": "@set" },
+    "utilityNetworks": { "@id": "erdif:utilityNetwork", "@container": "@set" },
+    "parking": { "@id": "erdif:parking", "@container": "@set" },
+    "localIdentifiers": { "@id": "erdif:localIdentifier", "@container": "@set" },
+    "localArea": { "@id": "erdif:localArea", "@container": "@set" },
+
+    "price": { "@id": "schema:price", "@type": "xsd:decimal" },
+    "priceCurrency": { "@id": "schema:priceCurrency" },
+    "unitCode": { "@id": "schema:unitCode" },
+    "negotiable": { "@id": "erdif:negotiable", "@type": "xsd:boolean" },
+    "priceOnRequest": { "@id": "erdif:priceOnRequest", "@type": "xsd:boolean" },
+
+    "email": { "@id": "schema:email" },
+    "telephone": { "@id": "schema:telephone" },
+
+    "floorSize": { "@id": "schema:floorSize" },
+    "plotSize": { "@id": "erdif:plotSize" },
+    "floorLevel": { "@id": "erdif:floorLevel", "@type": "xsd:integer" },
+    "distance": { "@id": "erdif:distance" },
+
+    "yearBuilt": { "@id": "schema:yearBuilt", "@type": "xsd:integer" },
+    "lastRenovationYear": { "@id": "erdif:lastRenovationYear", "@type": "xsd:integer" },
+    "floorsAboveGround": { "@id": "erdif:floorsAboveGround", "@type": "xsd:integer" },
+    "floorsUnderground": { "@id": "erdif:floorsUnderground", "@type": "xsd:integer" },
+    "elevator": { "@id": "erdif:elevator", "@type": "xsd:boolean" },
+
+    "count": { "@id": "erdif:count", "@type": "xsd:integer" },
+    "includedInPrice": { "@id": "erdif:includedInPrice", "@type": "xsd:boolean" },
+
+    "geo": { "@id": "schema:geo" },
+    "approximateCoordinates": {
+      "@id": "erdif:approximateCoordinates",
+      "@type": "xsd:boolean"
+    },
+    "address": { "@id": "schema:address" },
+
+    "theme": { "@id": "erdif:inspireTheme" },
+    "namespace": { "@id": "erdif:inspireNamespace" },
+    "localId": { "@id": "erdif:inspireLocalId" },
+    "registry": { "@id": "erdif:registry" },
+    "registryCountry": { "@id": "erdif:registryCountry" },
+    "registryLevel": { "@id": "erdif:registryLevel" },
+
+    "contentUrl": { "@id": "schema:contentUrl", "@type": "@id" },
+    "position": { "@id": "erdif:position", "@type": "xsd:integer" },
+
+    "sourceSystem": { "@id": "erdif:sourceSystem" },
+    "sourceAdvertId": { "@id": "erdif:sourceAdvertId" },
+    "exportedAt": { "@id": "erdif:exportedAt", "@type": "xsd:dateTime" },
+
+    "value": { "@id": "schema:value", "@type": "xsd:decimal" },
+    "latitude": { "@id": "schema:latitude", "@type": "xsd:double" },
+    "longitude": { "@id": "schema:longitude", "@type": "xsd:double" },
+    "streetAddress": { "@id": "schema:streetAddress" },
+    "addressLocality": { "@id": "schema:addressLocality" },
+    "addressRegion": { "@id": "schema:addressRegion" },
+    "postalCode": { "@id": "schema:postalCode" },
+    "addressCountry": { "@id": "schema:addressCountry" }
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/utility-network.schema.json",
+  "title": "UtilityNetwork",
+  "description": "Connection of the property to a utility network. Network and connection are two independent axes, hence two codelists.",
+  "type": "object",
+  "required": [
+    "@type",
+    "network",
+    "connection"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:UtilityNetwork`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:UtilityNetwork"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:UtilityNetwork"
+          }
+        }
+      ]
+    },
+    "network": {
+      "description": "Type of utility network.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Water",
+        "Sewage",
+        "Electricity",
+        "Heating",
+        "Cooling",
+        "Gas",
+        "Telecom",
+        "Internet"
+      ]
+    },
+    "connection": {
+      "description": "Means of connection to the given network.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "PublicMains",
+        "PrivateWell",
+        "PublicSewer",
+        "SepticTank",
+        "Grid",
+        "OffGrid",
+        "DistrictCentral",
+        "HeatPump",
+        "GasBoiler",
+        "DistrictCooling",
+        "AirConditioning",
+        "PublicGasMains",
+        "LpgTank",
+        "FixedLine",
+        "FiberOptic",
+        "Dsl",
+        "CableInternet",
+        "FixedWireless",
+        "MobileNetwork",
+        "Satellite"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "connection-matches-network",
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Cooling"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "GasBoiler",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Electricity"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Gas"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Heating"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCooling",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Internet"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Sewage"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Telecom"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicMains",
+                    "PrivateWell",
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "network"
+            ],
+            "properties": {
+              "network": {
+                "const": "Water"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "connection": {
+                "not": {
+                  "enum": [
+                    "PublicSewer",
+                    "SepticTank",
+                    "Grid",
+                    "OffGrid",
+                    "DistrictCentral",
+                    "HeatPump",
+                    "GasBoiler",
+                    "DistrictCooling",
+                    "AirConditioning",
+                    "PublicGasMains",
+                    "LpgTank",
+                    "FixedLine",
+                    "FiberOptic",
+                    "Dsl",
+                    "CableInternet",
+                    "FixedWireless",
+                    "MobileNetwork",
+                    "Satellite"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

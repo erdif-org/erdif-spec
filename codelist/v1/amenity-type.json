@@ -1,0 +1,219 @@
+{
+  "name": "AmenityType",
+  "description": {
+    "en": "Type of amenity in the surroundings of the property.",
+    "cs": "Druh občanské vybavenosti v okolí nemovitosti."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "BusStop",
+      "labels": {
+        "en": "Bus stop",
+        "cs": "Autobusová zastávka"
+      },
+      "description": {
+        "en": "Public bus stop.",
+        "cs": "Zastávka městské nebo linkové autobusové dopravy."
+      }
+    },
+    {
+      "code": "TramStop",
+      "labels": {
+        "en": "Tram stop",
+        "cs": "Tramvajová zastávka"
+      },
+      "description": {
+        "en": "Public tram stop.",
+        "cs": "Zastávka tramvaje."
+      }
+    },
+    {
+      "code": "MetroStation",
+      "labels": {
+        "en": "Metro station",
+        "cs": "Stanice metra"
+      },
+      "description": {
+        "en": "Underground or metro station.",
+        "cs": "Stanice metra."
+      }
+    },
+    {
+      "code": "TrainStation",
+      "labels": {
+        "en": "Train station",
+        "cs": "Vlakové nádraží"
+      },
+      "description": {
+        "en": "Railway station or stop.",
+        "cs": "Železniční stanice nebo zastávka."
+      }
+    },
+    {
+      "code": "ParkingLot",
+      "labels": {
+        "en": "Public parking",
+        "cs": "Veřejné parkoviště"
+      },
+      "description": {
+        "en": "Public car park.",
+        "cs": "Veřejné parkoviště."
+      }
+    },
+    {
+      "code": "Kindergarten",
+      "labels": {
+        "en": "Kindergarten",
+        "cs": "Mateřská škola"
+      },
+      "description": {
+        "en": "Pre-school education facility.",
+        "cs": "Zařízení předškolního vzdělávání."
+      }
+    },
+    {
+      "code": "School",
+      "labels": {
+        "en": "School",
+        "cs": "Škola"
+      },
+      "description": {
+        "en": "Primary or secondary school.",
+        "cs": "Základní nebo střední škola."
+      }
+    },
+    {
+      "code": "University",
+      "labels": {
+        "en": "University",
+        "cs": "Vysoká škola"
+      },
+      "description": {
+        "en": "Higher education institution.",
+        "cs": "Vysoká škola nebo univerzita."
+      }
+    },
+    {
+      "code": "Shop",
+      "labels": {
+        "en": "Shop",
+        "cs": "Obchod"
+      },
+      "description": {
+        "en": "Retail shop.",
+        "cs": "Maloobchodní prodejna."
+      }
+    },
+    {
+      "code": "Supermarket",
+      "labels": {
+        "en": "Supermarket",
+        "cs": "Supermarket"
+      },
+      "description": {
+        "en": "Grocery supermarket.",
+        "cs": "Potravinový supermarket."
+      }
+    },
+    {
+      "code": "PostOffice",
+      "labels": {
+        "en": "Post office",
+        "cs": "Pošta"
+      },
+      "description": {
+        "en": "Postal service branch.",
+        "cs": "Pobočka poštovních služeb."
+      }
+    },
+    {
+      "code": "Bank",
+      "labels": {
+        "en": "Bank",
+        "cs": "Banka"
+      },
+      "description": {
+        "en": "Bank branch or ATM.",
+        "cs": "Pobočka banky nebo bankomat."
+      }
+    },
+    {
+      "code": "Restaurant",
+      "labels": {
+        "en": "Restaurant",
+        "cs": "Restaurace"
+      },
+      "description": {
+        "en": "Restaurant or café.",
+        "cs": "Restaurace nebo kavárna."
+      }
+    },
+    {
+      "code": "Doctor",
+      "labels": {
+        "en": "Doctor",
+        "cs": "Lékař"
+      },
+      "description": {
+        "en": "General practitioner or specialist.",
+        "cs": "Praktický nebo odborný lékař."
+      }
+    },
+    {
+      "code": "Hospital",
+      "labels": {
+        "en": "Hospital",
+        "cs": "Nemocnice"
+      },
+      "description": {
+        "en": "Hospital.",
+        "cs": "Nemocnice."
+      }
+    },
+    {
+      "code": "Pharmacy",
+      "labels": {
+        "en": "Pharmacy",
+        "cs": "Lékárna"
+      },
+      "description": {
+        "en": "Pharmacy.",
+        "cs": "Lékárna."
+      }
+    },
+    {
+      "code": "Park",
+      "labels": {
+        "en": "Park",
+        "cs": "Park"
+      },
+      "description": {
+        "en": "Public park or green area.",
+        "cs": "Veřejný park nebo zeleň."
+      }
+    },
+    {
+      "code": "Playground",
+      "labels": {
+        "en": "Playground",
+        "cs": "Dětské hřiště"
+      },
+      "description": {
+        "en": "Children's playground.",
+        "cs": "Dětské hřiště."
+      }
+    },
+    {
+      "code": "SportsFacility",
+      "labels": {
+        "en": "Sports facility",
+        "cs": "Sportoviště"
+      },
+      "description": {
+        "en": "Sports ground, gym or swimming pool.",
+        "cs": "Sportoviště, posilovna nebo bazén."
+      }
+    }
+  ]
+}

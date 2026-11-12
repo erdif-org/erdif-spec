@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/export-information.schema.json",
+  "title": "ExportInformation",
+  "description": "Audit trail enabling record matching on repeated import across systems.",
+  "type": "object",
+  "required": [
+    "@type",
+    "sourceSystem",
+    "sourceAdvertId",
+    "exportedAt"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:ExportInformation`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:ExportInformation"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:ExportInformation"
+          }
+        }
+      ]
+    },
+    "sourceSystem": {
+      "description": "Identification of the source software.",
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceAdvertId": {
+      "description": "Advert identifier within the source system.",
+      "type": "string",
+      "minLength": 1
+    },
+    "exportedAt": {
+      "description": "Timestamp of the export.",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+    }
+  }
+}

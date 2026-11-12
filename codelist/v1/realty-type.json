@@ -1,0 +1,65 @@
+{
+  "name": "RealtyType",
+  "description": {
+    "en": "Type of real estate.",
+    "cs": "Druh nemovitosti."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "Apartment",
+      "labels": {
+        "en": "Apartment",
+        "cs": "Byt"
+      },
+      "description": {
+        "en": "Residential unit within a building.",
+        "cs": "Bytová jednotka v budově."
+      }
+    },
+    {
+      "code": "House",
+      "labels": {
+        "en": "House",
+        "cs": "Dům"
+      },
+      "description": {
+        "en": "Standalone residential building.",
+        "cs": "Samostatně stojící obytná budova."
+      }
+    },
+    {
+      "code": "Land",
+      "labels": {
+        "en": "Land",
+        "cs": "Pozemek"
+      },
+      "description": {
+        "en": "Land parcel without a building.",
+        "cs": "Pozemek bez stavby."
+      }
+    },
+    {
+      "code": "Commercial",
+      "labels": {
+        "en": "Commercial",
+        "cs": "Komerční prostory"
+      },
+      "description": {
+        "en": "Premises intended for business use.",
+        "cs": "Prostory určené k podnikání."
+      }
+    },
+    {
+      "code": "Parking",
+      "labels": {
+        "en": "Parking",
+        "cs": "Parkování"
+      },
+      "description": {
+        "en": "Standalone garage or parking space.",
+        "cs": "Samostatná garáž nebo parkovací stání."
+      }
+    }
+  ]
+}

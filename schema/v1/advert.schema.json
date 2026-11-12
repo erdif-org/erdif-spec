@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/advert.schema.json",
+  "title": "Advert",
+  "description": "Root entity of the format. Represents a single real estate offer.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@type",
+    "formatVersion",
+    "identifier",
+    "datePosted",
+    "transactionType",
+    "description",
+    "contact",
+    "realty",
+    "prices",
+    "exportInformation"
+  ],
+  "properties": {
+    "@context": {
+      "description": "The ERDIF context, alone or first among other contexts.",
+      "anyOf": [
+        {
+          "const": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld"
+        },
+        {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "https://erdif-org.github.io/erdif-spec/ns/v1/context.jsonld"
+            }
+          ]
+        }
+      ]
+    },
+    "@type": {
+      "description": "Must be or contain `erdif:Advert`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Advert"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Advert"
+          }
+        }
+      ]
+    },
+    "formatVersion": {
+      "description": "Version of the ERDIF format the document was created against.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^1\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$"
+    },
+    "identifier": {
+      "description": "Identifier of the advert within the issuing system.",
+      "type": "string",
+      "minLength": 1
+    },
+    "datePosted": {
+      "description": "Moment the offer was published.",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "transactionType": {
+      "description": "Type of transaction the offer concerns.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Sale",
+        "Rent",
+        "Auction"
+      ]
+    },
+    "description": {
+      "description": "Marketing text of the offer in language variants. At least one language is required.",
+      "$ref": "common.schema.json#/$defs/languageMap"
+    },
+    "contact": {
+      "description": "Contact entity managing the offer.",
+      "$ref": "contact.schema.json"
+    },
+    "realty": {
+      "description": "Physical property the offer concerns.",
+      "$ref": "realty.schema.json"
+    },
+    "prices": {
+      "description": "Price items of the offer.",
+      "type": "array",
+      "items": {
+        "$ref": "price.schema.json"
+      },
+      "minItems": 1
+    },
+    "media": {
+      "description": "Photos, videos, floor plans and virtual tours.",
+      "type": "array",
+      "items": {
+        "$ref": "media.schema.json"
+      }
+    },
+    "exportInformation": {
+      "description": "Export audit trail.",
+      "$ref": "export-information.schema.json"
+    }
+  }
+}

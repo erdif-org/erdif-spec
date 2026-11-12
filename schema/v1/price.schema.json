@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://erdif-org.github.io/erdif-spec/schema/v1/price.schema.json",
+  "title": "Price",
+  "description": "A single price item of the offer. An offer may carry several of different types.",
+  "type": "object",
+  "required": [
+    "@type",
+    "priceType",
+    "priceCurrency"
+  ],
+  "properties": {
+    "@type": {
+      "description": "Must be or contain `erdif:Price`, usually next to a schema.org type.",
+      "anyOf": [
+        {
+          "const": "erdif:Price"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "erdif:Price"
+          }
+        }
+      ]
+    },
+    "priceType": {
+      "description": "Type of the price item.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Purchase",
+        "Rent",
+        "ServiceCharges",
+        "Deposit",
+        "Commission",
+        "Parking"
+      ]
+    },
+    "price": {
+      "description": "Numeric value of the price. May be omitted only when `priceOnRequest` is true.",
+      "type": "number",
+      "minimum": 0
+    },
+    "priceOnRequest": {
+      "description": "Flag indicating that the price is available on request only.",
+      "type": "boolean"
+    },
+    "priceCurrency": {
+      "description": "Currency per ISO 4217.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z]{3}$"
+    },
+    "unitCode": {
+      "description": "Unit of measure per UN/CEFACT (e.g. MON per month, MTK per sqm).",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z0-9]{2,3}$"
+    },
+    "negotiable": {
+      "description": "Flag indicating whether the price is negotiable.",
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "price-or-on-request",
+      "anyOf": [
+        {
+          "required": [
+            "price"
+          ]
+        },
+        {
+          "required": [
+            "priceOnRequest"
+          ],
+          "properties": {
+            "priceOnRequest": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "$comment": "periodic-price-unit",
+      "if": {
+        "required": [
+          "priceType"
+        ],
+        "properties": {
+          "priceType": {
+            "enum": [
+              "Rent",
+              "ServiceCharges"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "unitCode"
+        ]
+      }
+    }
+  ]
+}

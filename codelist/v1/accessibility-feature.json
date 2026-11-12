@@ -1,0 +1,139 @@
+{
+  "name": "AccessibilityFeature",
+  "description": {
+    "en": "Accessibility feature. `appliesTo` lists the levels (Realty, Room) the value may be used on.",
+    "cs": "Prvek bezbariérovosti. `appliesTo` uvádí úrovně (Realty, Room), na kterých lze hodnotu použít."
+  },
+  "closed": false,
+  "values": [
+    {
+      "code": "BarrierFree",
+      "labels": {
+        "en": "Barrier-free",
+        "cs": "Bezbariérová"
+      },
+      "description": {
+        "en": "Fully accessible according to the national regulation (e.g. Decree 398/2009 Coll. in CZ).",
+        "cs": "Plně bezbariérová podle národního předpisu (v ČR vyhláška č. 398/2009 Sb.)."
+      },
+      "appliesTo": [
+        "Realty",
+        "Room"
+      ]
+    },
+    {
+      "code": "StepFreeEntrance",
+      "labels": {
+        "en": "Step-free entrance",
+        "cs": "Bezbariérový vstup"
+      },
+      "description": {
+        "en": "Entrance without steps or with a ramp.",
+        "cs": "Vstup bez schodů nebo s rampou."
+      },
+      "appliesTo": [
+        "Realty"
+      ]
+    },
+    {
+      "code": "ElevatorAccess",
+      "labels": {
+        "en": "Elevator access",
+        "cs": "Přístup výtahem"
+      },
+      "description": {
+        "en": "The unit is reachable by an elevator.",
+        "cs": "Jednotka je dosažitelná výtahem."
+      },
+      "appliesTo": [
+        "Realty"
+      ]
+    },
+    {
+      "code": "StairLift",
+      "labels": {
+        "en": "Stair lift",
+        "cs": "Schodišťová plošina"
+      },
+      "description": {
+        "en": "Stair lift or platform lift.",
+        "cs": "Schodišťová nebo zdvižná plošina."
+      },
+      "appliesTo": [
+        "Realty"
+      ]
+    },
+    {
+      "code": "WideDoorways",
+      "labels": {
+        "en": "Wide doorways",
+        "cs": "Rozšířené dveře"
+      },
+      "description": {
+        "en": "Doorways wide enough for a wheelchair.",
+        "cs": "Dveře dostatečně široké pro invalidní vozík."
+      },
+      "appliesTo": [
+        "Realty",
+        "Room"
+      ]
+    },
+    {
+      "code": "ThresholdFree",
+      "labels": {
+        "en": "Threshold-free",
+        "cs": "Bez prahů"
+      },
+      "description": {
+        "en": "No thresholds between rooms.",
+        "cs": "Bez prahů mezi místnostmi."
+      },
+      "appliesTo": [
+        "Realty",
+        "Room"
+      ]
+    },
+    {
+      "code": "WheelchairTurningSpace",
+      "labels": {
+        "en": "Wheelchair turning space",
+        "cs": "Otočný prostor pro vozík"
+      },
+      "description": {
+        "en": "Enough space for a wheelchair to turn.",
+        "cs": "Dostatečný prostor pro otočení invalidního vozíku."
+      },
+      "appliesTo": [
+        "Room"
+      ]
+    },
+    {
+      "code": "WalkInShower",
+      "labels": {
+        "en": "Walk-in shower",
+        "cs": "Bezbariérový sprchový kout"
+      },
+      "description": {
+        "en": "Level-access shower without a tray edge.",
+        "cs": "Sprchový kout bez vaničky a obruby."
+      },
+      "appliesTo": [
+        "Room"
+      ]
+    },
+    {
+      "code": "GrabBars",
+      "labels": {
+        "en": "Grab bars",
+        "cs": "Madla"
+      },
+      "description": {
+        "en": "Support grab bars at the toilet, bath or shower.",
+        "cs": "Opěrná madla u WC, vany nebo sprchy."
+      },
+      "appliesTo": [
+        "Room"
+      ]
+    }
+  ]
+}
