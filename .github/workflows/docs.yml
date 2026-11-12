@@ -60,3 +60,25 @@ jobs:
           VERSION="${GITHUB_REF_NAME%%.*}"   # v1.2.3 -> v1
           mike deploy --push --update-aliases "$VERSION" latest
           mike set-default --push latest
+
+      # Machine-readable files live at version-independent URLs in the site
+      # root (mike keeps every build under /dev/ or /<version>/): the JSON-LD
+      # context, the RDFS/OWL vocabulary, JSON Schemas ($id) and codelists.
+      # They are published from main and from release tags alike; once v1 is
+      # released, restrict this to tags so dev changes do not overwrite v1.
+      - name: Collect version-independent files
+        if: startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/')
+        run: |
+          mkdir -p dist/ns/v1 dist/schema/v1 dist/codelist/v1
+          cp schema/context.jsonld docs/ns/v1/erdif.ttl dist/ns/v1/
+          cp schema/*.schema.json dist/schema/v1/
+          cp codelists/*.json dist/codelist/v1/
+
+      - name: Publish version-independent files
+        if: startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/')
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          keep_files: true
+          commit_message: "Publish version-independent files"

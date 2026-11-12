@@ -1,6 +1,6 @@
 """
-MkDocs hook: regenerate the documentation and the RDFS/OWL vocabulary
-from codelists/*.json and schema/terms/*.json before every build.
+MkDocs hook: regenerate the documentation from codelists/*.json and
+schema/terms/*.json before every build.
 
 This way `mkdocs serve` / `mkdocs build` is all that is needed; the
 generators do not have to be run by hand. Changes to the JSON sources
